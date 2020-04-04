@@ -1,0 +1,46 @@
+/*include-file: Buttons-Tiles.css*/
+/*version: 1.01*/
+#ButtonTilesContainer {
+	display: inline-block;
+	width: 100%;
+}
+
+.ButtonTile {
+	width: 190px;
+	height: 218px;
+	margin: 0px 10px;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	background-size: cover;
+	margin-bottom: 30px;
+}
+.ButtonTileText {
+	width: 100%;
+	height: 62px;
+	background-color: #fff;
+	opacity: .8;
+	color: #193059;
+	text-align: center;
+	display: -ms-flexbox;
+	-ms-flex-pack: center;
+	-ms-flex-align: center;
+	display: -moz-box;
+	-moz-box-pack: center;
+	-moz-box-align: center;
+	vertical-align: bottom;
+	display: inline-block;
+	margin-top: 156px;
+	border-radius: 0px 0px 10px 10px;
+}
+.ButtonTileText > p {
+	margin-top: 19px;
+	font-weight: 600;
+	font-size: 17px;
+}
+.ButtonTile:hover{
+	background-color: #fff;
+	box-shadow: 0 0 10px #fff;
+}

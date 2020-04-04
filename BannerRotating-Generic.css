@@ -1,0 +1,129 @@
+/*include-file: BannerRotating-Generic.css*/
+/*version: 1.01*/
+/*
+CSS for Dogfood Welcome Page
+Taken from Dogfood on 4/26/2018 by J. Kaylen
+New Version 1/28/2020 to be more responsive
+*/
+
+.RotatingBanner {
+	width: 100%;
+	height: 0px;
+	padding-top:  max(calc(350/1200 * 100%),350px);
+	position: relative;
+}
+@media screen and (max-width: 1150px) {
+	.RotatingBanner{
+		padding-top: max(calc(400/1200 * 100%),300px);
+	}
+}
+.RotatingBanner .slideshow-container {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2;
+        position: absolute;
+        background-color: #fafafa;
+        text-align: left;
+}
+
+.RotatingBanner .mySlides {
+        display: none;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+}
+
+.RotatingBanner .mySlides::before {
+        height: 100%;
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+}
+
+.RotatingBanner .text {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        z-index: 3;
+        margin-left: 100px;
+        max-width: 500px;
+        padding: 20px;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 650px) {
+        .RotatingBanner .text {
+        	max-width: 244px;
+        	margin-left: 65px;
+        }
+}
+
+.RotatingBanner .text h2 {
+        font-size: 24px;
+        font-family: 'roboto';
+        margin: 0 0 8px;
+        text-transform: uppercase;
+}
+
+@media (max-width: 650px) {
+        .RotatingBanner .text h2 {
+        	font-size: 16px;
+        }
+}
+
+.RotatingBanner .text p {
+        margin: 0 0 20px;
+        font-size: 24px;
+        font-family: 'roboto';
+        width: 450px;
+}
+
+@media (max-width: 650px) {
+        .RotatingBanner .text p {
+        	max-width: 244px;
+            	font-size: 18px;
+        }
+}
+
+
+.RotatingBanner .text a {
+        color: #ffffff;
+        height: 30px;
+        width: 126px;
+        display: block;
+        text-align: center;
+        padding: 10px 5px 0 5px;
+        font-size: 14px;
+	font-family: 'roboto';
+        border-radius: 5px;
+	text-decoration: none;
+}
+
+.RotatingBanner .prev, .RotatingBanner .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: black;
+        font-size: 35px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        margin-left: 20px;
+}
+
+/* Position the "next button" to the right */
+.RotatingBanner .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.RotatingBanner .prev:hover, .RotatingBanner .next:hover {
+        background:rgba(255,255,255, 0.3);
+}

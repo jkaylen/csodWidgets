@@ -1,0 +1,288 @@
+/*include-file: StandardWidgets.css*/
+/*version: 1.01*/
+table .CsList th, table .CsList_th, .columnHeaderLinkText {
+	background: #fff;
+	color:#6b6c6e;
+	font-family: "Open Sans", "Gill Sans", "Gill Sans MT", "Calibri", "sans-serif";
+	font-size: 14px;
+	font-weight: 100;
+}
+
+.Panel_contentMiddle th {
+	background-color: transparent;
+}
+
+a {
+	font-weight: 100;
+}
+
+/*Added 5/9 for background video & gradient */
+body {
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.vidBackground { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    transition: 1s opacity;
+    display: none; /* Prevents display in CSOD Page Builder. Inline CSS changes back to block */
+}
+.BackgroundBannerGradient {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -90;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    transition: 1s opacity;
+}
+
+
+th {
+    height: 100%;
+    width: 100%;
+    background-color: #eeefef;
+    color: #6b6c6e;
+}
+
+
+/* START-DYNAMIC WIDGETS SECTION */ 
+
+/*Overwrite table hover state*/
+.CsList tbody tr:hover td {
+    background-color: #fff;
+}
+
+/* Table header styles */
+.Panel_titleMiddle {
+	text-align: left;
+	height: 40px;
+	background-color: var(--main-primary-color, #f4f5f6) !important;
+}
+
+/* Make table header text uppercase*/
+.Panel_titleMiddle h2 {
+	display: inline;
+	text-transform: uppercase;
+	padding-left: 25px !important;
+	font-family: "Open Sans", "Gill Sans", "Gill Sans MT", "Calibri", "sans-serif";
+	font-weight: 600;
+	font-size: 12pt !important;
+	border-bottom: none !important;
+	color: var(--main-secondary-color, white) !important;
+}
+
+
+/* Delete icon images, left border and right border images */
+.Panel_titleMiddle img, .Panel_titleMiddle span, .Panel_titleRight, .Panel_titleLeft{ 
+	display: none;
+}
+
+/* Change background color of middle panel and remove default widgit padding */
+.Panel_contentMiddle {
+	background-color: #fff;
+	padding: 0px 20px 0px 20px;
+}
+
+/* Control style of action items blue table header */
+[id$='_pnlActionItems_content']{
+	height:40px;
+}
+
+/* Control line height of text within action items - */
+[id$='_pnlActionItems_content'] tbody tr td{
+	line-height: 20px;
+}
+
+
+/* Align Header left*/
+.Panel_titleMiddle .titleLink {
+	text-align: left;
+}
+
+/* Align Table Header left*/
+.titleLink h2 {
+	padding-left: 25px !important;
+	font-family: "Open Sans", "Gill Sans", "Gill Sans MT", "Calibri", "sans-serif";
+	font-weight: 600;
+	font-size: 12pt !important;
+}
+
+/* Change link styles*/
+.CsList td, .FieldValue, .CsLinkButton, .Panel_contentMiddle > span {
+	font-family: "Open Sans", "Gill Sans", "Gill Sans MT", "Calibri", "sans-serif";
+	font-size: 12pt;
+	color: #6e6e6e;
+}
+
+.error {
+	font-family: "Open Sans", "Gill Sans", "Gill Sans MT", "Calibri", "sans-serif";
+	font-size: 12pt;
+}
+
+.Cslist td a {
+    color: #5d84ab;
+    text-decoration: underline;
+}
+
+/*Controls all table cells*//
+[id$='_pnlActionItems_content'] tbody tr td {
+	line-height: 20px;
+}
+
+/*Controls action items titles*/
+[id$="lbTitle"] {
+	text-decoration:none;
+}
+
+[id$="lbTitle"]:hover {
+	text-decoration:underline
+}
+
+/*Controls action item dates*/
+#ctl00_ContentPlaceHolder1_widgetLayout_rptWidgets_ctl01_widgetContainer_ctl00_rptActionItems_ctl01_lbDueDate {
+	text-decoration:none;    
+}
+
+/*Change style of all grey text in tables*/
+.CsList td span {
+	color: #6b6c6e;
+	font-family: "Open Sans", "Gill Sans", "Gill Sans MT", "Calibri", "sans-serif";
+	font-size: 12pt;
+}
+
+/*Change header color in action items*/
+.CsList th {
+	color: #6b6c6e;
+	font-family: "Open Sans", "Gill Sans", "Gill Sans MT", "Calibri", "sans-serif";
+}
+/* END - Action Items */
+
+
+/* START-Your Inbox */
+
+/*Controls inbox links */
+a.link {
+	font-size: 12pt;
+	font-family: "Open Sans", "Gill Sans", "Gill Sans MT", "Calibri", "sans-serif";
+	text-decoration: none;
+	font-weight: 100; 
+}
+
+/*Underlines Inbox links on hover*/
+a.link:hover {
+	text-decoration: underline;
+}
+
+/*END Your Transcript*/
+/*START Social Feed*/
+/*Background*/
+
+[id$='pnlSalesForceChatter_content'] > tbody > tr > td:nth-child(2) {
+	background-color: var(--main-neutral-color) !important;
+}
+/*Table Header*/
+[id$='pnlSalesForceChatter_titleMiddle'] {
+	background-color: var(--main-neutral-color) !important;
+	color: #000000 !important;
+	font-family: Arial !important;
+}
+[id$='pnlSalesForceChatter_titleMiddle'] > h2 {
+	color: var(--main-primary-color,#000) !important;
+}
+
+.csod-sf-fw {
+	background-color: #FFFFFF;
+	max-height: 450px;
+	overflow: auto;
+	overflow-x: hidden;
+	font-family: "roboto", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+}
+
+/*Give vertical space between table rows*/
+.csod-sf-fw > table > tbody > tr{
+	border-bottom: 10px solid #eaeaea;
+}
+
+/*Enlarge Profile image*/
+.csod-sf-wplist-img {
+	width: 85px;
+	padding: 11px 22px 8px 22px;
+}
+
+/*Hover state social feed*/
+.csod-sf-segtype-link:hover {
+	text-decoration: underline;
+}
+.csod-sf-wplist-c {
+	text-decoration: underline;
+}
+/*Get rid of yellow background color in first row*/
+.csod-sf-wplist .isBroadcast {
+	background-color: #fff;
+}
+/*End Social Feed*/
+
+/* END-DYNAMIC WIDGETS SECTION */ 
+
+
+
+/*START RESPONSIVE CODE*/
+
+@media screen and (max-width: 1262px) {
+	[id$='pnlActionItems_content'] tbody tr td {
+		font-size: 12px; 
+	}
+
+	/*Controls Table header font size*/
+	table .CsList th, table .CsList_th {
+		font-size: 12px !important;
+	}
+
+	/*Controls Table header font size*/
+	table .CsList th {
+		font-size: 12px;
+	}
+
+	a.link {
+		font-size: 12px;
+	}
+
+	/*Controls Inbox links*/
+	a[id$="rptNewUi_ct"] {
+		font-size: 12px; 
+	}
+
+	/*Controls Inbox sub text*/
+	.CsList td,.FieldValue, .CsLinkButton, .Panel_contentMiddle > span {
+		font-size: 12px; 
+	}
+
+	.CsList td span {
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 570px) {
+	.Panel_footer {
+		height: auto !important;
+	}
+}
+/*END RESPONSIVE CODE*/
+
+.tblRow .CsLinkButton {
+	font-weight: initial;
+}

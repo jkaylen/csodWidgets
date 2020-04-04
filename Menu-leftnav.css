@@ -1,0 +1,54 @@
+/*include-file: Menu-leftnav.css*/
+/*version: 1.01*/
+#LeftNavContainer {
+	width: 80px;
+/*NC*/	  background-color: var(--main-neutral-color, #f4f5f6);
+	height: 100%;
+	z-index: 100;
+	padding-top: 80px;
+}
+#LeftNavContainer > ul {
+	list-style-type: none;
+	padding-left: 0px;
+}
+#LeftNavContainer > ul > li {
+	text-decoration: none;
+	text-align: center;
+	margin-top: 20px;
+/*SC*/  color: var(--main-secondary-color, #fff);
+	font-size: 12px;
+	cursor: pointer;
+	padding: 16px 5px;
+}
+#ProfileImageWrapper {
+	margin-top: 30px;
+	margin-left: 10px;
+	display: block;
+}
+.ProfileImageContainer {
+	height: 50px;
+	width: 50px;
+	background-size: 101%;
+	background-repeat: no-repeat;
+	background-image: url(' ');
+	overflow: hidden;
+	border-radius: 50%;
+	text-align: left;
+	cursor: pointer;
+}
+#LeftNavContainer > ul > li > a {
+	list-style-type: none;
+	text-decoration: none;
+	padding-left: 0px;
+/*SC*/  color: var(--main-secondary-color, #fff);
+	margin-top: 4px;
+}
+#LeftNavContainer .far,#LeftNavContainer .fas {
+/*SC*/  color: var(--main-secondary-color, #fff) !important;
+	font-size: 3em !important;
+	display: block;
+	padding-bottom: 5px;
+}
+#LeftNavContainer > ul > li:hover {
+/*PC*/  background-color: var(--main-primary-color, #193059);
+}

@@ -1,0 +1,134 @@
+/*include-file: ThreeRectangles.css*/
+/*version: 1.01*/
+/*CHANGE COLOR OF PARAGRAPH TEXT*/
+.LinkBody > p {
+color: #979797;
+}
+/*BORDER COLOR AND TEXT COLOR OF LINK BOX CTA*/
+.LinkCTA {
+	border: 2px solid;
+}
+/*HOVER BORDER COLOR AND TEXT COLOR AND Fill COLOR OF LINK BOX CTA*/
+.LinkCTA:hover {
+	color: #fff;
+}
+
+/*BACKGROUND COLOR BOXES (NOTE: THESE ARE EXTRA CONTROLS AND NOT PART OF THE PRIMARY TEMPLATE)
+*/
+.LinkHeader  {
+	background-color: #fff;
+}
+.LinkBody {
+	background-color: #fff;
+	border: 1px solid white;
+}
+/*SECTION 2 END*/
+
+.LinkCTA {
+    width: 175px;
+    height: 43px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 12px 50px 12px 50px;
+    cursor: pointer;
+}
+
+
+.ThreeRectangles {
+	width: 100%;
+	margin: auto;
+}
+.Section2{
+	width:100%;
+	margin: auto;
+}
+.ThreeRectangles .far, .ThreeRectangles .fas, .ThreeRectangles .fab, .ThreeRectangles .fa {
+	font-size: 40px !important;
+	padding-top: 30px
+}
+.LinkSectionContainer {
+	text-align: center;
+}
+.LinkSectionContainer > h2 {
+	padding: 0px;
+	margin: 0px;
+	padding-top: 40px;
+	font-size: 14pt;
+	margin-bottom: 35px;
+}
+.LinkContainer {
+	width: 270px;
+	display: inline-block;
+	text-align: center;
+	margin: 0px 10px;
+	height: 300px;
+	padding-bottom: 40px;
+}
+
+.LinkHeader {
+	width: 100%;
+	height: 73px;
+	line-height: 73px;
+	text-align: center;
+	font-size: 16px;
+}
+.LinkBody {
+	text-align: center;
+	padding-bottom: 20px;
+	margin-bottom: 25px;
+}
+.LinkBody > h3 {
+	margin-top: 20px;
+	font-weight: 300;
+	font-size: 25px;
+}
+.LinkBody > p {
+	list-style-type: none;
+	padding-left: 0px;
+	margin: auto;
+	width: 240px;
+	margin-bottom: 40px;
+	font-size: 15px;
+	line-height: 24px;
+}
+
+
+@media screen and (max-width: 1200px){
+	.ThreeRectangles {
+		margin: auto;
+		display: block;
+		margin-bottom: 50px;
+	}
+}
+
+@media screen and (max-width: 934px) {
+	.ThreeRectangles{
+		margin-bottom: 50px;
+	}
+	.LinkContainer {
+		padding-bottom: 70px ;
+	}
+}
+@media screen and (max-width: 841px) {
+	.ThreeRectangles{
+		margin-bottom: 50px;
+	}
+}
+
+
+
+/* Safari 10.1+ (which is the latest version of Safari at this time) */
+@media not all and (min-resolution:.001dpcm) { @media {
+.safari_only {
+svg {
+vertical-align: -149%;
+}
+}
+}

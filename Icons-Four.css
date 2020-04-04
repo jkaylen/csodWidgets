@@ -1,0 +1,84 @@
+/*include-file: Icons-Four.css*/
+/*version: 1.01*/
+.SubNavWrapper .MenuItem:hover{
+background-color: #05bae4;
+}
+
+.SubNavWrapper .fas:hover {
+	color: #fff;
+}
+
+.SubNavWrapper {
+	width: 100%;
+	clear: both;
+}
+
+.SubNavWrapper ul {
+	text-align: center;
+	margin-top: 0px;
+}
+.SubNavWrapper ul li {
+	display: inline-block;
+}
+.SubNavIconContainer {
+	display: block;
+	width: 100%;
+}
+.SubNavWrapper .MenuItem > a {
+	text-decoration: none;
+}
+.SubNavWrapper .SubNavLabelContainer {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	font-weight: 100;
+}
+.SubNavWrapper .MenuItem {
+	font-family: 'Roboto', 'Arial', 'sans-serif';
+	font-size: 12pt;
+	margin-right: 42px;
+	display: inline-block;
+	line-height: 30px;
+	text-decoration: none;
+	cursor: pointer;
+	padding: 25px;
+	width: 102px;
+}
+/*Hover Sub Nav */
+.SubNavWrapper .MenuItem:hover .fas {
+	color: #fff
+}
+.SubNavWrapper .MenuItem:hover .SubNavLabelContainer {
+	color: #fff
+}
+/*END SUB NAV*/
+.SubNavWrapper .fas {
+	font-size: 30px;
+}
+
+/*START RESPONSIVE CODE*/
+@media screen and (max-width: 1262px) {
+	/*Shift Sub Nav text to center*/
+	.SubNavWrapper ul {
+		text-align: center;
+		width: 100%;
+		padding: 0px;
+	}
+	.SubNavWrapper .MenuItem {
+		font-size: 1em;
+		font-weight: 300;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+}
+@media screen and (max-width: 450px) {
+	.SubNavWrapper .MenuItem {
+		max-width: 80px;
+		width: 76px;
+	}
+	.SubNavWrapper .csod-sf-wplist-img {
+		width: 40px;
+		padding: 11px 22px 8px 22px;
+	}
+}
+/*END RESPONSIVE CODE*/

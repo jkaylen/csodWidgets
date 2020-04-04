@@ -1,0 +1,54 @@
+/*include-file: Icons-Fivev2.css*/
+/*version: 2.01*/
+.FiveIconNavWrapper .far,.FiveIconNavWrapper .fa,.FiveIconNavWrapper .fab,.FiveIconNavWrapper .fas, .FiveIconLabelContainer.iconText {
+	color: var(--main-primary-color, #193059);
+}
+.FiveIconNavWrapper .MenuItem:hover {
+	background-color: var(--main-primary-color, #193059) !important;
+}
+.FiveIconNavWrapper.neutralBackground {
+	background-color: var(--main-neutral-color, #f4f5f6);
+}
+.FiveIconNavWrapper {
+	width: 100%;
+	clear: both;
+}
+.FiveIconNavWrapper ul {
+	text-align: center;
+	margin-top: 0px;
+}
+.FiveIconNavWrapper ul li {
+	display: inline-block;
+}
+.FiveIconContainer {
+	display: block;
+	width: 100%;
+}
+.FiveIconLabelContainer {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	line-height: 22px;
+}
+.FiveIconNavWrapper .MenuItem {
+	font-family: 'Roboto', 'Arial', 'sans-serif';
+	font-size: 12pt;
+	margin-right: 42px;
+	display: inline-block;
+	line-height: 30px;
+	text-decoration: none;
+	cursor: pointer;
+	padding: 25px;
+	width: 102px;
+}
+.FiveIconNavWrapper .MenuItem:hover .far,.FiveIconNavWrapper .MenuItem:hover .fab,.FiveIconNavWrapper .MenuItem:hover .fa,.FiveIconNavWrapper .MenuItem:hover .fas, .MenuItem:hover .FiveIconLabelContainer {
+	color: #fff
+}
+.FiveIconNavWrapper a {
+	font-weight: 100;
+	text-decoration: none;
+}
+.FiveIconNavWrapper .far,.FiveIconNavWrapper .fa,.FiveIconNavWrapper .fab,.FiveIconNavWrapper .fas {
+	font-size: 30px;
+}
+

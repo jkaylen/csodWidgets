@@ -1,0 +1,125 @@
+/*include-file: Banner-DanNewHire.css*/
+/*version: 1.01*/
+.NewHireBannerWrapper{
+	position: relative;
+	height: 350px;
+	margin: auto;
+}
+
+.NewHireMainBannerGradient {
+   background-image: -webkit-gradient(linear, 0% 0%, 100% 0%,color-stop(0, rgba(44, 86, 127, 0.5)),color-stop(1, rgba(44, 86, 127, 0.57)));
+    /* Android 2.3 */
+    background-image: -webkit-linear-gradient(left,rgba(44, 86, 127, 0.5) 0%,rgba(44, 86, 127, 0.57) 100%);
+    background-image: -ms-linear-gradient(left,rgba(44, 86, 127, 0.5) 0%,rgba(44, 86, 127, 0.57) 100%);
+    /* IE10+ */
+    background-image: linear-gradient(to right,rgba(44, 86, 127, 0.5) 0%,rgba(44, 86, 127, 0.57) 100%);
+
+ 	height: 350px;
+	position: absolute;
+	right: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+.NewHireMainBanner {
+	background-color: #f4f4f4;
+	height: 100%;
+	background-image: url('https://scfiles.csod.com/jkaylen/widgets/ComputerWork.jpg');
+	background-color: #f4f4f4;
+	background-size: cover;
+}
+#NewHireProfileImageWrapper {
+	margin: auto;
+	display: block;
+	padding-top: 25px;
+	position: absolute;
+	width: 100%;
+}
+
+.NewHirectd-welcome-message {
+	display: block;
+	margin: auto;
+	padding: 0px;
+	font-family: 'Roboto', 'sans-serif';
+	width: 70%;
+	text-align: center;
+}
+.NewHirectd-welcome-message h1{
+	font-family: 'Roboto', 'sans-serif';
+	font-weight: 300;
+	font-size: 36pt;
+	margin: 0px;
+	padding-top: 65px;
+}
+.NewHirectd-welcome-message h2{
+	font-family: "Roboto", "sans-serif";
+	font-weight: 600;
+	font-size: 14pt;
+	margin: auto;
+	margin-top: 8px;
+	padding: 0px;
+	max-width: 450px;
+}
+.NewHireCTAContainer {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	margin-top: 42px;
+}
+#NewHireMainBannerCTA {
+	width: 300px;
+	height: 43px;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+	margin-top: 110px;
+	font-family: "roboto", "sans-serif";
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 10px 35px;
+	border-size: 1px;
+	border-type:  solid;
+}
+#MainBannerCTA:hover {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1200px){
+	.NewHireMainBanner {
+		width: 100%;
+		background-repeat: no-repeat;
+		text-align: left;
+		background-size: cover;
+		background-position: center;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.NewHireBannerWrapper {
+		height:370px;
+	}
+	.NewHireMainBannerGradient {
+		height: 370px;
+	}
+	/*Make header container full width and reset left margin, align center*/
+	.NewHirectd-welcome-message {
+		margin-left: 0px;
+		padding: 0px;
+		text-align: center;
+		width: 100%;
+		display:block;
+		position: relative;
+	}
+	.NewHirectd-welcome-message h1 {
+		font-size: 24pt;
+		margin-top: 0px;
+		padding-top: 100px;
+	}
+	.NewHirectd-welcome-message h2{
+		font-size: 14pt;
+		max-width: 100%;
+		padding: 0px 20px;
+	}
+}

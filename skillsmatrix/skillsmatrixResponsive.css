@@ -1,0 +1,211 @@
+/*include-file: skillsmatrix/skillsmatrixResponsive.css*/
+/*version: 1.00*/
+	.cso-tbl-std th {
+           font-weight: bold;
+           font-family: "Segoe UI",Arial,sans-serif;
+        }
+        .cso-icon {
+		background-image: url(https://demojk.csod.com/images/icon-status.png) !important;
+	}
+	.cso-tbl-std tr.x:hover {
+		background:none;
+	}
+	.cso-tbl-std th.x {
+		background:none;
+		border:none;
+	}
+	.cs-body.main {
+		padding:0 10px 50px;
+	}
+	.cso-icon.popadd {
+		background-image:url(https://fidelitysandbox.csod.com/images/sprite1.png);
+		background-position:0 -1147px;
+		height:18px;
+		width:18px;
+	}
+	.cso-icon.stat {
+		background-image:url(https://demojk.csod.com/images/icon-status.png);
+		height:40px;
+		width:40px;
+	}
+	.cso-icon.stat.s {
+		height:26px;
+		width:26px;
+	}
+	.cso-icon.stat.grn {
+		background-position:0 0;
+	}
+	.cso-icon.stat.ylw {
+		background-position:0 -50px;
+	}
+	.cso-icon.stat.red {
+		background-position:0 -100px;
+	}
+	.cso-icon.stat.na {
+		background-position:0 -150px;
+	}
+	.cso-icon.stat.grn.s {
+		background-position:-50px 0;
+	}
+	.cso-icon.stat.ylw.s {
+		background-position:-50px -50px;
+	}
+	.cso-icon.stat.red.s {
+		background-position:-50px -100px;
+	}
+	.cso-icon.stat.na.s {
+		background-position:-50px -150px;
+	}
+	td.stat {
+		padding:0;
+		background-color: white;
+	}
+	td.stat > a {
+		display:block;
+		padding:0.8em 0.5em;
+		#padding:0.75em 0.7em; /* IE7 */
+	}
+	td.stat > a:hover {
+		border:2px solid #0085D8;
+		background-color: #fff !important;
+	}
+	.hdntxt {
+		position:absolute !important;
+		height:1px;
+		width:1px;
+		overflow:hidden;
+		clip:rect(1px 1px 1px 1px); /* IE7 */
+		clip:rect(1px, 1px, 1px, 1px);
+	}
+	
+.Rtable {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.Rtable-cell {
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0.8em 1.2em;
+  overflow: hidden;
+  list-style: none;
+  border: solid 2px white;
+  background: rgba(112, 128, 144, 0.2);
+}
+.Rtable-cell > h1,
+.Rtable-cell > h2,
+.Rtable-cell > h3,
+.Rtable-cell > h4,
+.Rtable-cell > h5,
+.Rtable-cell > h6 {
+  margin: 0;
+}
+/* Table column sizing
+================================== */
+.Rtable--2cols > .Rtable-cell {
+  width: 50%;
+}
+.Rtable--3cols > .Rtable-cell {
+  width: 33.33%;
+}
+.Rtable--4cols > .Rtable-cell {
+  width: 25%;
+}
+.Rtable--5cols > .Rtable-cell {
+  width: 20%;
+}
+.Rtable--6cols > .Rtable-cell {
+  width: 16.6%;
+}
+.Rtable--6cols > .Rtable-cell {
+  width: 14.2%;
+}
+/* Page styling
+================================== */
+
+/* Apply styles
+================================== */
+.Rtable {
+  position: relative;
+  top: 3px;
+  left: 3px;
+}
+.Rtable-cell {
+  margin: -3px 0 0 -3px;
+  background-color: white;
+  border-color: #e2e6e9;
+}
+/* Cell styles
+================================== */
+.Rtable-cell--dark {
+  background-color: slategrey;
+  border-color: #5a6673;
+  color: white;
+}
+.Rtable-cell--dark > h1,
+.Rtable-cell--dark > h2,
+.Rtable-cell--dark > h3,
+.Rtable-cell--dark > h4,
+.Rtable-cell--dark > h5,
+.Rtable-cell--dark > h6 {
+  color: white;
+}
+.Rtable-cell--medium {
+  background-color: #b8c0c8;
+  border-color: #a9b3bc;
+}
+.Rtable-cell--light {
+  background-color: white;
+  border-color: #e2e6e9;
+}
+.Rtable-cell--highlight {
+  background-color: lightgreen;
+  border-color: #64e764;
+}
+
+.Rtable-cell--head {
+  background-color: slategrey;
+  color: white;
+}
+.Rtable-cell--head > h1,
+.Rtable-cell--head > h2,
+.Rtable-cell--head > h3,
+.Rtable-cell--head > h4,
+.Rtable-cell--head > h5,
+.Rtable-cell--head > h6 {
+  color: #193059;
+  font-size: 16px;
+}
+
+/* Responsive
+==================================== */
+@media all and (max-width: 500px) {
+  .Rtable--collapse {
+    display: block;
+  }
+  .Rtable--collapse > .Rtable-cell {
+    width: 100% !important;
+  }
+  .Rtable--collapse > .Rtable-cell--foot {
+    margin-bottom: 1em;
+  }
+}
+.no-flexbox .Rtable {
+  display: block;
+}
+.no-flexbox .Rtable > .Rtable-cell {
+  width: 100%;
+}
+.no-flexbox .Rtable > .Rtable-cell--foot {
+  margin-bottom: 1em;
+}
+
+#skillsmatrix {
+	margin: auto;
+	background-color: #193059;
+	position: relative;
+	padding: 10px;
+	min-height: 80px;
+	width: calc(100% - 20px);
+}

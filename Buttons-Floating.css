@@ -1,0 +1,46 @@
+/*include-file: Buttons-Floating.css*/
+/*version: 1.01*/
+.Floating-CTA {
+/*SC*/  color: var(--main-secondary-color, #ffffff);
+/*SC*/  border-color: var(--main-secondary-color, #ffffff);
+	text-align: right;
+	font-size: 12px;
+	padding: 12px 28px 11px;
+	position: relative;
+	display: inline-block;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	white-space: nowrap;
+	border: 2px solid #fff;
+	font-weight: bold;
+	border-radius: 4px;
+	transition-property: background-color, border-color, color;
+	transition: .3s ease-in-out;
+	text-decoration: none;
+	margin-top: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-family: "Montserrat", "sans-serif";
+	font-weight: 700;
+}
+.Floating-CTA:hover {
+	color: #000;
+/*SC*/  border-color: var(--main-secondary-color, #ffffff);
+/*SC*/  background-color: var(--main-secondary-color, #ffffff);
+}
+
+.Floating-CTA.Primary {
+/*PC*/  background-color: var(--main-primary-color, #193059);
+/*PC*/  border-color: var(--main-primary-color, #193059);
+}
+.Floating-CTA.Primary:hover{
+	opacity: .8;
+/*SC*/  color: var(--main-secondary-color, #ffffff);
+}
+.FloatingCTAContainer {
+	text-align: left;
+}
+.Floating-CTA:first-child {
+	margin-left: 10px;
+}

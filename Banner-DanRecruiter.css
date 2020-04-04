@@ -1,0 +1,119 @@
+/*include-file: Banner-DanRecruiter.css*/
+/*version: 1.01*/
+.RecruiterBannerWrapper{
+	height: 420px;
+	margin:auto;
+	position: relative;
+	width: 100%;
+}
+.RecruiterMainBanner {
+	background-size: cover;
+	background-image: url('https://scfiles.csod.com/labs/widgets/Recruiter-Banner-Image-BW.jpg');
+	background-color: #fff;
+	background-position: 95% -35%;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	text-align: left;
+}
+.RecruiterMainBannerGradient {
+	height: 420px;
+	position: absolute;
+	right: 0px;
+	left: 0px;
+	width: 100%;
+	background-image: -webkit-gradient(linear, 0% 0%, 100% 0%,color-stop(0, rgba(44, 86, 127, 0.39)),color-stop(1, rgba(44, 86, 127, 0.38)));
+	/* Android 2.3 */
+	background-image: -webkit-linear-gradient(left,rgba(44, 86, 127, 0.39) 0%,rgba(44, 86, 127, 0.38) 100%);
+	background-image: -ms-linear-gradient(left,rgba(44, 86, 127, 0.39) 0%,rgba(44, 86, 127, 0.38) 100%);
+	/* IE10+ */
+	background-image: linear-gradient(to right,rgba(44, 86, 127, 0.39) 0%,rgba(44, 86, 127, 0.38) 100%);
+}
+.RecruiterBannerContentContainer {
+	padding-top: 90px;
+	width: 730px;
+	position: absolute;
+	margin-left: 10%;
+}
+.Recruiterctd-welcome-message {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+.Recruiterctd-welcome-message h1{
+	font-family: "arial", "sans-serif";
+	font-weight: 600;
+	font-size: 36pt;
+	margin: 0px;
+	margin-top: 57px;
+}
+.Recruiterctd-welcome-message h2{
+	font-family: "arial", "sans-serif";
+	font-weight: 500;
+	font-size: 22pt;
+	margin: 0px;
+	margin-top: 8px;
+	padding:0px;
+	margin-bottom: 38px;
+}
+#RecruiterMainBannerCTA {
+	width: 175px;
+	padding: 2px 11px;
+	border-radius: 10px;
+	position: relative;
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+	font-family: "Roboto", "open-sans", "sans-serif";
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 400;
+	display: block;
+	margin-bottom: 10px;
+}
+#RecruiterMainBannerCTA:hover {
+	cursor: pointer;
+	background-color: var(--main-secondary-color, #fff);
+	box-shadow: 0 0 10px var(--main-secondary-color, #fff);
+	color: var(--main-primary-color, #193059);
+}
+
+
+@media screen and (max-width: 1262px) {
+	.RecruiterMainBanner {
+		background-size: cover;
+		background-position: 100%;
+	}
+	#RecruiterMainBannerCTA {
+		width: 116px;
+		display: block;
+		position: relative;
+		text-align: center;
+		line-height: 30px;
+		margin: auto;
+		margin-top: 19px;
+		font-size: 12px;
+		line-height: 24px;
+	}
+	.RecruiterBannerContentContainer {
+		width: 100%;
+		padding-top: 60px;
+		margin-left: 0px;
+		padding-top: 131px;
+	}
+	.Recruiterctd-welcome-message {
+		margin-left: 0px;
+		padding: 0px;
+		text-align: center;
+		width: 100%;
+		display:block;
+		position: relative;
+	}
+	.Recruiterctd-welcome-message h1 {
+		font-size: 24pt;
+		margin-top: 8px;
+	}
+	.Recruiterctd-welcome-message h2{
+		font-size: 14pt;
+	}
+}

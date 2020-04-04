@@ -1,0 +1,237 @@
+/*include-file: Banner-Generic.css*/
+/*version: 1.01*/
+.GenericBannerWrapper{
+	height: 0px;
+	padding-top: calc(350/1200 * 100%);
+	margin:auto;
+	position: relative;
+	width: 100%;
+}
+.GenericMainBanner {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-size: cover;
+	background-position: 95% 100%;
+	background-image: url('https://scfiles.csod.com/labs/widgets/Recruiter-Banner-Image-BW.jpg');
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	text-align: left;
+}
+.GenericMainBannerGradient {
+	top: 0;
+	height: 100%;
+	bottom: 0;
+	z-index: 1;
+	position: absolute;
+	right: 0px;
+	left: 0px;
+	width: 100%;
+	/* background: rgba(73,155,234,1); */
+	background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.73) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(32,124,229,0.73)));
+	background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.73) 100%);
+	background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.73) 100%);
+	background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.73) 100%);
+	background: linear-gradient(to right, rgba(44, 86, 127, 1) 0%, rgba(32,124,229,0.27) 100%);
+}
+.GenericBannerContentContainer {
+	padding-top: calc(.1 * 100%); /*6vw;*/
+	width: 930px;
+	position: absolute;
+	margin-left: 10%;
+	z-index: 2;
+}
+.Genericctd-welcome-message {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+.Genericctd-welcome-message h1{
+	font-family: "arial", "sans-serif";
+	font-weight: 600;
+	font-size: 36pt; /*3.3vw;*/
+	margin: 0px;
+	/*margin-top: 50px; 4vw;*/
+}
+.Genericctd-welcome-message h2{
+	font-family: "arial", "sans-serif";
+	font-weight: 500;
+	font-size: 22pt; /*2vw;*/
+	margin: 0px;
+	margin-top: 8px;
+	padding:0px;
+	margin-bottom: 32px; /*2.5vw;*/
+}
+#TransparentBackground-CTA {
+	width: 175px;
+	height: 43px;
+	border-radius: 10px;
+	position: relative;
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+	font-family: "Roboto", "open-sans", "sans-serif";
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 400;
+	color: #fff;
+	border: 3px solid #fff;
+	display: block;
+}
+#SolidBackground-CTA {
+	width: 152px; /*12vw;*/
+	padding: 12.5px; /*1vw;*/
+	border-radius: 10px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	font-family: "Roboto", "open-sans", "sans-serif";
+	text-decoration: none;
+	font-size: 15px; /*1.2vw;*/
+	font-weight: 400;
+	display: block;
+	margin-bottom: 10px;
+}
+#SolidBackground-CTA:hover {
+	cursor: pointer;
+	background-color: var(--main-secondary-color, #fff);
+	box-shadow: 0 0 10px var(--main-secondary-color, #fff);
+	color: var(--main-primary-color, #193059);
+}
+#ProfileImageWrapper {
+    display: none;
+}
+.ProfileImageContainer:hover {
+    -webkit-box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);
+    -moz-box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);
+    box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -ms-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+.ProfileImageContainer {
+    height: 120px;
+    width: 120px;
+    background-size: 101%;
+    background-repeat: no-repeat;
+    background-image: url(https://scfiles.csod.com/dbenson/Images/EmployeeWelcomePageTemplate/User.png);
+    overflow: hidden;
+    border-radius: 50%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.centerText {
+	margin: auto;
+	text-align: center;
+	width: 100%;
+}
+.centerText a {
+	margin: auto;
+}
+.centerText .GenericBannerContentContainer {
+	margin: auto;
+	width: 100%;
+}
+
+.showProfilePicture .Genericctd-welcome-message {
+	margin-left: 42px;
+}
+.showProfilePicture #SolidBackground-CTA,.showProfilePicture #TransparentBackground-CTA {
+	margin-left: 160px;
+}
+.showProfilePicture #GenericBannerContentContainer {
+	margin-left: 0px;
+}
+.showProfilePicture .GenericBannerContentContainer {
+	padding-top: calc(.07* 100%);
+}
+.showProfilePicture #ProfileImageWrapper {
+	display: inline-block;
+}
+
+@media screen and (max-width: 1150px) {
+	.GenericBannerWrapper{
+		padding-top: max(calc(400/1200 * 100%),300px);
+	}
+	#SolidBackground-CTA {
+		margin: auto;
+		/*font-size: 1.6vw;*/
+		/*width: 16vw; */
+	}
+	#TransparentBackground-CTA {
+		margin: auto;
+		font-size: 14.5px;
+	}
+	.GenericBannerContentContainer {
+		width: 100%;
+		margin-left: 0px;
+		padding-top: 8%;
+	}
+	.Genericctd-welcome-message {
+		text-align: center;
+		width: 100%;
+	}
+	.Genericctd-welcome-message h1 {
+		margin-top: 8px;
+		font-size: 33px;
+	}
+	.Genericctd-welcome-message h2 {
+		font-size: 20px;
+	}
+	.showProfilePicture #ProfileImageWrapper {
+		display: block;
+		margin: auto;
+		width: 80px;
+
+	}
+	.showProfilePicture .GenericBannerContentContainer {
+		padding-top: 5vw;
+	}
+	.showProfilePicture .Genericctd-welcome-message,.showProfilePicture #SolidBackground-CTA, .showProfilePicture #TransparentBackground-CTA {
+		margin: auto;
+	}
+	.showProfilePicture h2 {
+		margin-bottom: 1.5vw;
+	}
+	.ProfileImageContainer {
+		height: 80px;
+		width: 80px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.GenericBannerWrapper{
+		padding-top: calc(350/375 * 100%);
+	}
+	.Genericctd-welcome-message h1 {
+		font-size: 8.5vw;
+
+	}
+	.Genericctd-welcome-message h2{
+		font-size: 5vw;
+	}
+	#SolidBackground-CTA {
+		width: 32vw;
+		font-size: 3vw;
+		margin-top: 5vw !important;
+	}
+	#TransparentBackground-CTA {
+		width: 32vw;
+		font-size: 3vw;
+		margin-top: 5vw !important;
+	}
+	.Genericctd-welcome-message {
+		padding-top: 15vw;
+	}
+	.showProfilePicture .Genericctd-welcome-message {
+		padding-top: 2vw;
+	}
+	.showProfilePicture .GenericBannerContentContainer {
+		padding-top: 10vw;
+	}
+}

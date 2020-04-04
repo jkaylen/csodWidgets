@@ -1,0 +1,117 @@
+/*include-file: SearchBar.css*/
+/*version: 1.01*/
+.searchBarLayout > .p-gridcol {
+	-ms-flex: 1;
+	flex: 1;
+}
+.searchBarLayout > .p-gridcol {
+	-ms-flex: 0 1 auto;
+	-ms-flex-positive: 0;
+	-ms-flex-negative: 1;
+	flex: 0 1 auto;
+}
+
+.searchBarLayout h2 {
+	font-family: 'Roboto-bold';
+	font-size: 24px;
+	font-weight: 600;
+}
+.searchBarLayout {
+	box-sizing: border-box;
+	display: flex;
+	display: -ms-flexbox;
+	flex-direction: row;
+	flex-wrap: wrap;
+	-ms-flex-direction: row;
+	-ms-flex-wrap: wrap;
+	margin-right: 0px;
+	margin-left: 0px;
+    align-items: center;
+    justify-content: center;
+	height: 175px;
+}
+
+
+form#aspnetForm {
+	flex: 1;
+	-ms-flex: 1 1 auto;
+}
+.searchBarLayout > .col-10-device-none.p-gridcol {
+	-ms-flex-preferred-size: 83.33%;
+	flex-basis: 83.33%;
+	width: 83.33%;
+	max-width: 600px;
+}
+
+.p-predictivesearch {
+	position: relative;
+}
+
+.p-predictivesearch .predictor-icon {
+	width: 1.33em;
+	text-align: center;
+}
+.p-predictivesearch .predictor-icon::before {
+	color: #6a7587;
+	position: absolute;
+	font-size: 0.85rem;
+	top: 2rem;
+	left: 0.85rem;
+}
+
+.p-bg-full-hv-grey70:hover, .p-bg-hv-grey70:hover {
+    background-color: #d8dce4!important;
+}
+
+.p-predictivesearch .predictor {
+	background-color: #fff;
+	-o-border-image: none;
+	border-image: none;
+	border-radius: 4px;
+	display: block;
+	overflow: hidden;
+	padding: 0 .857rem;
+	transition: border-color .3s;
+	font-size: 1rem;
+	max-width: 80%;
+	padding-left: 2.57em;
+	width: 80%;
+	height: 2.57em;
+	border: 1px solid #e4e7ec;
+}
+
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  text-align: left;
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  font-size: .8rem;
+  font-weight: 600;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9; 
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}

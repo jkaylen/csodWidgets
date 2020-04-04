@@ -1,0 +1,33 @@
+/*include-file: Title-Floating.css*/
+/*version: 1.01*/
+#FloatingTitleContainer {
+	margin: auto;
+}
+.floating-title-message {
+/*SC*/  color: var(--main-secondary-color, #ffffff);
+	margin: 0px;
+	width: 100%;
+	padding: 0px;
+	/*float: left;*/
+}
+
+.floating-title-message h1{
+	text-align: left;
+	font-family: "Montserrat", "sans-serif";
+	font-weight: 700;
+	font-size: 40pt;
+	margin: 0px;
+}
+.floating-title-message h1 .Highlight {
+/*PC*/  color: var(--main-primary-color, #193059);
+}
+@media screen and (max-width: 1262px) {
+	.floating-title-message h1{
+		font-size: 35pt;
+	}
+}
+@media screen and (max-width: 450px) {
+	.floating-title-message h1{
+		font-size: 23pt;
+	}
+}
