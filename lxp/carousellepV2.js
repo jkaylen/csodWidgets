@@ -18,7 +18,6 @@ function getLEPWidget(service,div) {
     getLXPLOs(service, div);
   }
 }
-
 function getLXPToken(service, div) {
   strLXPURL = "/ui/lms-learner-home/home";	//Need to call LXP first to get Token and User Numeric ID. Takes about 2s
   var xhrLXP = new XMLHttpRequest();
@@ -36,7 +35,6 @@ function getLXPToken(service, div) {
   xhrLXP.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
   xhrLXP.send();
 }
-
 function getLXPLOs(service, div) {
   //Generate URL based off of Service, record limit, and user numeric id
   if((service == 'Featured') || (service == 'Suggested') || (service == 'Required')) {
@@ -59,7 +57,6 @@ function getLXPLOs(service, div) {
   xhr.setRequestHeader('Authorization', 'Bearer ' + strToken);
   xhr.send();
 }
-
 function buildCarousel(div, strRawData, service) {
   objTraining = JSON.parse(strRawData);
   console.log(objTraining);
@@ -71,11 +68,9 @@ function buildCarousel(div, strRawData, service) {
   for (var i = 0; i < strLength; i++) {
   	if(objTraining.data[i].thumbnailImage.substring(0,2) == '..') {
           strThumbnail = "/LMS" + objTraining.data[i].thumbnailImage.substring(2);
-        } else {
+    } else {
           strThumbnail = objTraining.data[i].thumbnailImage;
-
-        }
-
+    }
   	strHTML = strHTML + '  <li class="p-carouselitem" style="width: 204px;">\n';
   	strHTML = strHTML + '  <div class="p-panel p-p-r-sm">\n';
   	strHTML = strHTML + '    <div>\n';
@@ -92,11 +87,11 @@ function buildCarousel(div, strRawData, service) {
   	strHTML = strHTML + '                <div>\n';
   	strHTML = strHTML + '		  <span class="p-text p-f-sz-sm p-t-meta  p-f-w-n p-t-wr-el" title="' + objTraining.data[i].trainingType + '">' + objTraining.data[i].trainingType + '</span>\n';
   	strHTML = strHTML + '                  <a class="p-link p-link-def" href="' + objTraining.data[i].trainingDetailsUrl + '" title="' + objTraining.data[i].title + '" data-tag="p-title-link"><div class="p-panel p-p-t-xs p-p-b-xs" style="min-height: 40px; overflow: hidden;"><div><div class="p-MultiLineFade p-t-default  p-f-w-b p-f-sz-lg fader-2-lines">' + objTraining.data[i].title + '<div class="fader fader-push-1-lines fader-bg-white"></div></div></div></div></a>\n';
-	if(service == 'Continue') {
-		strHTML = strHTML + '		  <span title="' + objTraining.data[i].status + '" class="p-text p-f-sz-sm p-t-meta  p-f-w-n p-t-wr-el">' + objTraining.data[i].status + '</span>\n';
-	} else {
+	  if(service == 'Continue') {
+		  strHTML = strHTML + '		  <span title="' + objTraining.data[i].status + '" class="p-text p-f-sz-sm p-t-meta  p-f-w-n p-t-wr-el">' + objTraining.data[i].status + '</span>\n';
+	  } else {
 	  	strHTML = strHTML + '		  <span title="' + objTraining.data[i].durationString + '" class="p-text p-f-sz-sm p-t-meta  p-f-w-n p-t-wr-el">' + objTraining.data[i].durationString + '</span>\n';
-	}
+	  }
   	strHTML = strHTML + '                </div>\n';
   	strHTML = strHTML + '              </div>\n';
   	strHTML = strHTML + '            </div>\n';
@@ -138,21 +133,17 @@ function buildCarousel(div, strRawData, service) {
   	strHTML = strHTML + '</li>\n';
   	if(objTraining.data[i].isInUserTranscript == true) {
 	  	getLOActionItems(objTraining.data[i].id, i, objTraining.data[i].isInUserTranscript);
-	}
+	  }
   }
-
   strHTML = strHTML + '</ul>\n';
   strHTML = strHTML + '</div>\n';
   strHTML = strHTML + '</div>\n';
   strHTML = strHTML + '<div class="p-button-dropdown-list no-max-height jkHideMenu" id="LOMenu" style="display: none;"><ul role="menu" id="LOMenuItems"></ul></div>\n';
   strHTML = strHTML + '<div id="responsiveWelcomePageModal" class="lxpmodal"><div class="lxpmodal-content"><div id="lxpModalContent"><p>Processing</p></div></div></div>\n';
-
   document.getElementById(div).innerHTML = '';
   document.getElementById(div).innerHTML = strHTML;
-
   ps = new PerfectScrollbar('#' + div + ' .p-carouselmobile-container',{suppressScrollY: true});
 }
-
 function getLOActionItems(LOID, intCounterID, bolTranscript) {
 	strPageURL = "/services/api/LMS/TrainingActionForUser/Actions/?isInUserTranscript=" + bolTranscript + "&trainingIds=" + LOID;
 	var xhr = new XMLHttpRequest();
@@ -167,7 +158,6 @@ function getLOActionItems(LOID, intCounterID, bolTranscript) {
 	xhr.setRequestHeader('Authorization', 'Bearer ' + strToken);
 	xhr.send();
 }
-
 function buildMenu(strData, intCounterID) {
 	objMenuActions = JSON.parse(strData);
 	console.log(objMenuActions);
@@ -189,7 +179,6 @@ function buildMenu(strData, intCounterID) {
 		}
 	}
 }
-
 function processAction(elm) {
 	document.getElementById('responsiveWelcomePageModal').style.display = "block";
 	strURL = elm.getAttribute("data-url");
@@ -207,7 +196,6 @@ function processAction(elm) {
 	xhr.setRequestHeader('Authorization', 'Bearer ' + strToken);
 	xhr.send('{"actionId":' + strActionId + ',"trainingId":"' + strLOID + '","viewSource":2}');
 }
-
 function processActionResults(strData) {
 	var objMenuResults = JSON.parse(strData);
 	if(objMenuResults.data.length > 0) {
@@ -222,7 +210,6 @@ function processActionResults(strData) {
 		document.getElementById('responsiveWelcomePageModal').style.display = "none";
 	}
 }
-
 function showLOMenu(obj) {
 	document.getElementById("mainContainer").removeEventListener("click", hideMenu);
 	window.removeEventListener("scroll", hideMenu);
@@ -240,9 +227,7 @@ function showLOMenu(obj) {
 	elmMenu.style.left = parseInt(rect.x + 10) + 'px';
 	setTimeout(function(){ document.getElementById("mainContainer").addEventListener("click", hideMenu);
 	window.addEventListener("scroll", hideMenu); }, 1000);
-
 }
-
 function hideMenu(e) {
 	if((e.target.localName != 'li') && (e.target.localName != 'ul')) {
 		document.getElementById("mainContainer").removeEventListener("click", hideMenu);

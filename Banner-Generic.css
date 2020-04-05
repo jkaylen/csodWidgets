@@ -44,11 +44,7 @@
 	margin-left: 10%;
 	z-index: 2;
 }
-.Genericctd-welcome-message {
-	display: inline-block;
-	margin: 0px;
-	padding: 0px;
-}
+.Genericctd-welcome-message {	display: inline-block;	margin: 0px;	padding: 0px;}
 .Genericctd-welcome-message h1{
 	font-family: "arial", "sans-serif";
 	font-weight: 600;
@@ -101,9 +97,7 @@
 	box-shadow: 0 0 10px var(--main-secondary-color, #fff);
 	color: var(--main-primary-color, #193059);
 }
-#ProfileImageWrapper {
-    display: none;
-}
+#ProfileImageWrapper {    display: none;}
 .ProfileImageContainer:hover {
     -webkit-box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);
     -moz-box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);
@@ -126,112 +120,37 @@
     cursor: pointer;
 }
 
-.centerText {
-	margin: auto;
-	text-align: center;
-	width: 100%;
-}
-.centerText a {
-	margin: auto;
-}
-.centerText .GenericBannerContentContainer {
-	margin: auto;
-	width: 100%;
-}
+.centerText {	margin: auto;	text-align: center;	width: 100%;}
+.centerText a {	margin: auto;}
+.centerText .GenericBannerContentContainer {	margin: auto;	width: 100%;}
 
-.showProfilePicture .Genericctd-welcome-message {
-	margin-left: 42px;
-}
-.showProfilePicture #SolidBackground-CTA,.showProfilePicture #TransparentBackground-CTA {
-	margin-left: 160px;
-}
-.showProfilePicture #GenericBannerContentContainer {
-	margin-left: 0px;
-}
-.showProfilePicture .GenericBannerContentContainer {
-	padding-top: calc(.07* 100%);
-}
-.showProfilePicture #ProfileImageWrapper {
-	display: inline-block;
-}
+.showProfilePicture .Genericctd-welcome-message {	margin-left: 42px;}
+.showProfilePicture #SolidBackground-CTA,.showProfilePicture #TransparentBackground-CTA {	margin-left: 160px;}
+.showProfilePicture #GenericBannerContentContainer {	margin-left: 0px;}
+.showProfilePicture .GenericBannerContentContainer {	padding-top: calc(.07* 100%);}
+.showProfilePicture #ProfileImageWrapper {	display: inline-block;}
 
 @media screen and (max-width: 1150px) {
-	.GenericBannerWrapper{
-		padding-top: max(calc(400/1200 * 100%),300px);
-	}
-	#SolidBackground-CTA {
-		margin: auto;
-		/*font-size: 1.6vw;*/
-		/*width: 16vw; */
-	}
-	#TransparentBackground-CTA {
-		margin: auto;
-		font-size: 14.5px;
-	}
-	.GenericBannerContentContainer {
-		width: 100%;
-		margin-left: 0px;
-		padding-top: 8%;
-	}
-	.Genericctd-welcome-message {
-		text-align: center;
-		width: 100%;
-	}
-	.Genericctd-welcome-message h1 {
-		margin-top: 8px;
-		font-size: 33px;
-	}
-	.Genericctd-welcome-message h2 {
-		font-size: 20px;
-	}
-	.showProfilePicture #ProfileImageWrapper {
-		display: block;
-		margin: auto;
-		width: 80px;
-
-	}
-	.showProfilePicture .GenericBannerContentContainer {
-		padding-top: 5vw;
-	}
-	.showProfilePicture .Genericctd-welcome-message,.showProfilePicture #SolidBackground-CTA, .showProfilePicture #TransparentBackground-CTA {
-		margin: auto;
-	}
-	.showProfilePicture h2 {
-		margin-bottom: 1.5vw;
-	}
-	.ProfileImageContainer {
-		height: 80px;
-		width: 80px;
-	}
+	.GenericBannerWrapper{		padding-top: max(calc(400/1200 * 100%),300px);	}
+	#SolidBackground-CTA {		margin: auto;		/*font-size: 1.6vw;*/		/*width: 16vw; */	}
+	#TransparentBackground-CTA {		margin: auto;		font-size: 14.5px;	}
+	.GenericBannerContentContainer {		width: 100%;		margin-left: 0px;		padding-top: 8%;	}
+	.Genericctd-welcome-message {		text-align: center;		width: 100%;	}
+	.Genericctd-welcome-message h1 {		margin-top: 8px;		font-size: 33px;	}
+	.Genericctd-welcome-message h2 {		font-size: 20px;	}
+	.showProfilePicture #ProfileImageWrapper {		display: block;		margin: auto;		width: 80px;	}
+	.showProfilePicture .GenericBannerContentContainer {		padding-top: 5vw;	}
+	.showProfilePicture .Genericctd-welcome-message,.showProfilePicture #SolidBackground-CTA, .showProfilePicture #TransparentBackground-CTA {		margin: auto;	}
+	.showProfilePicture h2 {		margin-bottom: 1.5vw;	}
+	.ProfileImageContainer {		height: 80px;		width: 80px;	}
 }
 @media screen and (max-width: 480px) {
-	.GenericBannerWrapper{
-		padding-top: calc(350/375 * 100%);
-	}
-	.Genericctd-welcome-message h1 {
-		font-size: 8.5vw;
-
-	}
-	.Genericctd-welcome-message h2{
-		font-size: 5vw;
-	}
-	#SolidBackground-CTA {
-		width: 32vw;
-		font-size: 3vw;
-		margin-top: 5vw !important;
-	}
-	#TransparentBackground-CTA {
-		width: 32vw;
-		font-size: 3vw;
-		margin-top: 5vw !important;
-	}
-	.Genericctd-welcome-message {
-		padding-top: 15vw;
-	}
-	.showProfilePicture .Genericctd-welcome-message {
-		padding-top: 2vw;
-	}
-	.showProfilePicture .GenericBannerContentContainer {
-		padding-top: 10vw;
-	}
+	.GenericBannerWrapper{		padding-top: calc(350/375 * 100%);	}
+	.Genericctd-welcome-message h1 {		font-size: 8.5vw;	}
+	.Genericctd-welcome-message h2{		font-size: 5vw;	}
+	#SolidBackground-CTA {		width: 32vw;		font-size: 3vw;		margin-top: 5vw !important;	}
+	#TransparentBackground-CTA {		width: 32vw;		font-size: 3vw;		margin-top: 5vw !important;	}
+	.Genericctd-welcome-message {		padding-top: 15vw;	}
+	.showProfilePicture .Genericctd-welcome-message {		padding-top: 2vw;	}
+	.showProfilePicture .GenericBannerContentContainer {		padding-top: 10vw;	}
 }

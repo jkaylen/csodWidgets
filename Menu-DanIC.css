@@ -1,67 +1,13 @@
 /*include-file: Menu-DanIC.css*/
 /*version: 1.01*/
-/*START SUB NAV */
-
-
-.MiniSubNavWrapper {
-	width: 100%;
-	height: 35px;
-}
-
-.MiniSubNavWrapper ul {
-	text-align:right;
-	margin-right: 30px;
-	margin-top: 10px;
-	padding-top: 4px;
-}
-
-.MiniSubNavWrapper .MenuItem{
-	font-family: 'Myriad-pro', 'Arial', 'sans-serif';
-	font-size: 12pt;
-	margin-right: 42px;
-	display: inline;
-	line-height: 30px;
-	text-decoration: none;
-	cursor: pointer; 
-}
-
-.MiniSubNavWrapper .MenuItem a {
-	font-weight: 400;
-	text-decoration: none;
-}
-
-.MiniSubNavWrapper .MenuItem:hover {
-	text-decoration: underline; 
-}
-
-.MiniSubNavWrapper #MenuItem4{
-	padding-right: 0px;
-}
-
-
-/*END SUB NAV*/
-.MiniSubNavWrapper a {
-	font-weight: 100;
-}
-
-
-/*START RESPONSIVE CODE*/
-
+.MiniSubNavWrapper {	width: 100%;	height: 35px;}
+.MiniSubNavWrapper ul {	text-align:right;	margin-right: 30px;	margin-top: 10px;	padding-top: 4px;}
+.MiniSubNavWrapper .MenuItem{	font-family: 'Myriad-pro', 'Arial', 'sans-serif';	font-size: 12pt;	margin-right: 42px;	display: inline;	line-height: 30px;	text-decoration: none;	cursor: pointer; }
+.MiniSubNavWrapper .MenuItem a {	font-weight: 400;	text-decoration: none; }
+.MiniSubNavWrapper .MenuItem:hover {	text-decoration: underline; }
+.MiniSubNavWrapper #MenuItem4{	padding-right: 0px;}
+.MiniSubNavWrapper a {font-weight: 100;}
 @media screen and (max-width: 1262px) {
-	/*Shift Sub Nav text to center*/
-	.MiniSubNavWrapper .SubNavWrapper ul {
-		text-align: center;
-		width: 100%;
-		padding: 0px;
-	}
-
-	.MiniSubNavWrapper .MenuItem {
-		font-size: 1em;
-		font-weight: 100;
-		margin-right: 10px;
-		margin-left: 10px;
-	}
+	.MiniSubNavWrapper .SubNavWrapper ul {	text-align: center;	width: 100%;	padding: 0px;	}
+	.MiniSubNavWrapper .MenuItem {		font-size: 1em;		font-weight: 100;		margin-right: 10px;		margin-left: 10px;	}
 }
-
-
-/*END RESPONSIVE CODE*/

@@ -2,13 +2,7 @@
 /*version: 1.01*/
 /*BANNER SECTION START */
 
-/*Section Divider for banner controls height */
-.BannerWrapper{
-	/*max-width:1200px;*/
-	height: 212px;
-	margin:auto;
-	position: relative;
-}
+.BannerWrapper{	height: 212px;	margin:auto;	position: relative;}
     /*Main Banner Gradient*/
 .ICMainBannerGradient {
 	height: 100%;
@@ -35,7 +29,6 @@
 	background-image: url('https://scfiles.csod.com/jkaylen/widgets/TeamBG.jpg');
 	background-color: #193059;
 }
-
 #ProfileImageWrapper {
 	margin-left: 8%;
 	margin-top: 30px;
@@ -43,7 +36,6 @@
 	position: relative;
 	z-index: 5;
 }
-
 .ProfileImageContainer {
 	height: 138px;
 	width: 138px;
@@ -66,141 +58,22 @@
 	-o-transition: .25s ease-in-out;
 	transition: .25s ease-in-out;
 }
-
-.ctd-welcome-message {
-	position: absolute;
-	display: inline-block;
-	color: #fff;
-	margin: 0px;
-	margin-left: 42px;
-	padding: 0px;
-	z-index: 10;
-}
-
-.ctd-welcome-message h1{
-	font-family: "arial", "sans-serif";
-	font-weight: 600;
-	font-size: 36pt;
-	margin: 0px;
-	margin-top: 57px;
-}
-
-.ctd-welcome-message h2{
-	color: #fff;
-	font-family: "arial", "sans-serif";
-	font-weight: 500;
-	font-size: 22pt;
-	margin: 0px;
-	margin-top: 8px;
-	padding:0px;
-}
-
-#ArrowImage {
-	position: absolute;
-	display: inline-block;
-	margin-left: 507px;
-	margin-top: 19px;
-	-ms-transform: rotate(-8deg);
-	-webkit-transform: rotate(-8deg);
-	transform: rotate(-8deg);
-	z-index: 10;
-}
-
-#MainBannerCTA {
-	width: 175px;
-	height: 43px;
-	border-radius: 10px;
-	position: absolute;
-	text-align: center;
-	line-height: 40px;
-	text-decoration: none;
-	margin-left: 621px;
-	margin-top: 110px;
-	font-family: "arial", "sans-serif";
-	text-decoration: none;
-	font-size: 16px;
-	font-weight:400;
-	color: #fff;
-	border: 3px solid #fff;
-	z-index: 10;
-}
-
-#MainBannerCTA:hover {
-	cursor: pointer;
-	background-color: #fff;
-	color: #193059;
-}
-
-/*BANNER SECTION END */
-
-/*START RESPONSIVE CODE*/
+.ctd-welcome-message {	position: absolute;	display: inline-block;	color: #fff;	margin: 0px;	margin-left: 42px;	padding: 0px;	z-index: 10;}
+.ctd-welcome-message h1{	font-family: "arial", "sans-serif";	font-weight: 600;	font-size: 36pt;	margin: 0px;	margin-top: 57px; }
+.ctd-welcome-message h2{	color: #fff;	font-family: "arial", "sans-serif";	font-weight: 500;	font-size: 22pt;	margin: 0px;	margin-top: 8px;	padding:0px; }
+#ArrowImage {	position: absolute;	display: inline-block;	margin-left: 507px;	margin-top: 19px;	-ms-transform: rotate(-8deg);	-webkit-transform: rotate(-8deg);	transform: rotate(-8deg);	z-index: 10;}
+#MainBannerCTA {	width: 175px;	height: 43px;	border-radius: 10px;	position: absolute;	text-align: center;	line-height: 40px;	text-decoration: none;	margin-left: 621px;	margin-top: 110px;	font-family: "arial", "sans-serif";	text-decoration: none;	font-size: 16px;	font-weight:400;	color: #ffffff; border: 3px solid #fff;	z-index: 10; }
+#MainBannerCTA:hover {	cursor: pointer;	background-color: #fff;	color: #193059;}
 
 @media screen and (max-width: 1262px) {
-	.MainBanner {
-		background-size: cover !important;
-	}
-	.BannerWrapper {
-		height:270px;
-	}
-
-	#MainBannerCTA {
-		width: 115px;
-		height: 30px;
-		display: block;
-		position: relative;
-		text-align: center;
-		line-height: 30px;
-		margin: auto;
-		margin-top: 19px;
-		font-size: 12px;
-	}
-
-	/*Remove arrow image*/
-	#ArrowImage {
-		display:none;
-	}
-
-	/*Make profile image container full width*/
-	#ProfileImageWrapper {
-		margin-top: 30px;
-		margin-left: auto;
-		margin-right: auto;
-		display: inline-block;
-		width: 100%;
-	}
-
-	/*Align profile image to center and make smaller*/
-	.ProfileImageContainer {
-		height: 80px;
-		width: 80px;
-		background-size: 101%;
-		background-repeat: no-repeat;
-		overflow: hidden;
-		border-radius: 50%;
-		text-align: center;
-		cursor: pointer;
-		margin: auto;
-	}
-
+	.MainBanner {		background-size: cover !important;	}
+	.BannerWrapper {		height:270px;	}
+	#MainBannerCTA {		width: 115px;		height: 30px;		display: block;		position: relative;		text-align: center;		line-height: 30px;		margin: auto;		margin-top: 19px;		font-size: 12px;	}
+	#ArrowImage {		display:none;	}
+	#ProfileImageWrapper {		margin-top: 30px;		margin-left: auto;		margin-right: auto;		display: inline-block;		width: 100%;	}
+	.ProfileImageContainer {		height: 80px;		width: 80px;		background-size: 101%;		background-repeat: no-repeat;		overflow: hidden;		border-radius: 50%;		text-align: center;		cursor: pointer;		margin: auto;	}
 	/*Make header container full width and reset left margin, align center*/
-	.ctd-welcome-message {
-		margin-left: 0px;
-		padding: 0px;
-		text-align: center;
-		width: 100%;
-		display:block;
-		position: relative;
-	}
-
-	.ctd-welcome-message h1 {
-		font-size: 24pt;
-		margin-top: 8px;
-	}
-
-	.ctd-welcome-message h2{
-		font-size: 14pt;
-	}
+	.ctd-welcome-message {		margin-left: 0px;		padding: 0px;		text-align: center;		width: 100%;		display:block;		position: relative;	}
+	.ctd-welcome-message h1 {		font-size: 24pt;		margin-top: 8px;	}
+	.ctd-welcome-message h2{		font-size: 14pt;	}
 }
-
-
-/*END RESPONSIVE CODE*/

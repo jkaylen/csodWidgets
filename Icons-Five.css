@@ -1,45 +1,11 @@
 /*include-file: Icons-Five.css*/
 /*version: 1.01*/
-.SubNavWrapper {
-	width: 100%;
-	clear: both;
-}
-.SubNavWrapper ul {
-	text-align: center;
-	margin-top: 0px;
-}
-.SubNavWrapper ul li {
-	display: inline-block;
-}
-.SubNavIconContainer {
-	display: block;
-	width: 100%;
-}
-.SubNavLabelContainer {
-	display: block;
-	width: 100%;
-	text-decoration: none;
-	line-height: 22px;
-}
-.MenuItem {
-	font-family: 'Roboto', 'Arial', 'sans-serif';
-	font-size: 12pt;
-	margin-right: 42px;
-	display: inline;
-	line-height: 30px;
-	text-decoration: none;
-	cursor: pointer;
-	padding: 25px;
-	width: 102px;
-}
-.MenuItem:hover .far, .MenuItem:hover .fas, .MenuItem:hover .SubNavLabelContainer {
-	color: #fff
-}
-.SubNavWrapper a {
-	font-weight: 100;
-	text-decoration: none;
-}
-.SubNavWrapper .far, .SubNavWrapper .fas {
-	font-size: 30px;
-}
-
+.SubNavWrapper {	width: 100%;	clear: both;}
+.SubNavWrapper ul {	text-align: center;	margin-top: 0px;}
+.SubNavWrapper ul li {	display: inline-block;}
+.SubNavIconContainer {	display: block;	width: 100%;}
+.SubNavLabelContainer {	display: block;	width: 100%;	text-decoration: none;	line-height: 22px;}
+.MenuItem {	font-family: 'Roboto', 'Arial', 'sans-serif';	font-size: 12pt;	margin-right: 42px;	display: inline;	line-height: 30px;	text-decoration: none;	cursor: pointer;	padding: 25px;	width: 102px;}
+.MenuItem:hover .far, .MenuItem:hover .fas, .MenuItem:hover .SubNavLabelContainer {	color: #fff}
+.SubNavWrapper a {	font-weight: 100;	text-decoration: none;}
+.SubNavWrapper .far, .SubNavWrapper .fas {	font-size: 30px; }

@@ -1,90 +1,24 @@
 /*include-file: Icons-Fourv2.css*/
 /*version: 2.01*/
-.FourIconWrapper .fab,.FourIconWrapper .fa,.FourIconWrapper .far,.FourIconWrapper .fas, .FourIconLabelContainer.iconText {
-	color: var(--main-primary-color, #193059);
-}
-.FourIconWrapper .MenuItem:hover {
-	background-color: var(--main-primary-color, #193059) !important;
-}
-.FourIconWrapper.neutralBackground {
-	background-color: var(--main-neutral-color, #f4f5f6);
-}
-
-.FourIconWrapper .fab:hover,.FourIconWrapper .fa:hover,.FourIconWrapper .far:hover, .FourIconWrapper .fas:hover {
-	color: #fff;
-}
-
-.FourIconWrapper {
-	width: 100%;
-	clear: both;
-}
-
-.FourIconWrapper ul {
-	text-align: center;
-	margin-top: 0px;
-}
-.FourIconWrapper ul li {
-	display: inline-block;
-}
-.SubNavIconContainer {
-	display: block;
-	width: 100%;
-}
-.FourIconWrapper .MenuItem > a {
-	text-decoration: none;
-}
-.FourIconWrapper .FourIconLabelContainer {
-	display: block;
-	width: 100%;
-	text-decoration: none;
-	font-weight: 100;
-}
-.FourIconWrapper .MenuItem {
-	font-family: 'Roboto', 'Arial', 'sans-serif';
-	font-size: 12pt;
-	margin-right: 42px;
-	display: inline-block;
-	line-height: 30px;
-	text-decoration: none;
-	cursor: pointer;
-	padding: 25px;
-	width: 102px;
-}
-/*Hover Sub Nav */
-.FourIconWrapper .MenuItem:hover .fab,.FourIconWrapper .MenuItem:hover .fa,.FourIconWrapper .MenuItem:hover .far, .FourIconWrapper .MenuItem:hover .fas {
-	color: #fff
-}
-.FourIconWrapper .MenuItem:hover .FourIconLabelContainer {
-	color: #fff
-}
-/*END SUB NAV*/
-.FourIconWrapper .fab,.FourIconWrapper .fa,.FourIconWrapper .far, .FourIconWrapper .fas {
-	font-size: 30px;
-}
-
-/*START RESPONSIVE CODE*/
+.FourIconWrapper .fab,.FourIconWrapper .fa,.FourIconWrapper .far,.FourIconWrapper .fas, .FourIconLabelContainer.iconText {	color: var(--main-primary-color, #193059);}
+.FourIconWrapper .MenuItem:hover {	background-color: var(--main-primary-color, #193059) !important;}
+.FourIconWrapper.neutralBackground {	background-color: var(--main-neutral-color, #f4f5f6);}
+.FourIconWrapper .fab:hover,.FourIconWrapper .fa:hover,.FourIconWrapper .far:hover, .FourIconWrapper .fas:hover {	color: #fff;}
+.FourIconWrapper {	width: 100%;	clear: both;}
+.FourIconWrapper ul {	text-align: center;	margin-top: 0px;}
+.FourIconWrapper ul li {	display: inline-block;}
+.SubNavIconContainer {	display: block;	width: 100%;}
+.FourIconWrapper .MenuItem > a {	text-decoration: none;}
+.FourIconWrapper .FourIconLabelContainer {	display: block;	width: 100%;	text-decoration: none;	font-weight: 100;}
+.FourIconWrapper .MenuItem {	font-family: 'Roboto', 'Arial', 'sans-serif';	font-size: 12pt;	margin-right: 42px;	display: inline-block;	line-height: 30px;	text-decoration: none;	cursor: pointer;	padding: 25px;	width: 102px; }
+.FourIconWrapper .MenuItem:hover .fab,.FourIconWrapper .MenuItem:hover .fa,.FourIconWrapper .MenuItem:hover .far, .FourIconWrapper .MenuItem:hover .fas {	color: #fff }
+.FourIconWrapper .MenuItem:hover .FourIconLabelContainer {	color: #fff}
+.FourIconWrapper .fab,.FourIconWrapper .fa,.FourIconWrapper .far, .FourIconWrapper .fas {	font-size: 30px;}
 @media screen and (max-width: 1262px) {
-	/*Shift Sub Nav text to center*/
-	.FourIconWrapper ul {
-		text-align: center;
-		width: 100%;
-		padding: 0px;
-	}
-	.FourIconWrapper .MenuItem {
-		font-size: 1em;
-		font-weight: 300;
-		margin-right: 10px;
-		margin-left: 10px;
-	}
+	.FourIconWrapper ul {		text-align: center;		width: 100%;		padding: 0px;	}
+	.FourIconWrapper .MenuItem {		font-size: 1em;		font-weight: 300;		margin-right: 10px;		margin-left: 10px;	}
 }
 @media screen and (max-width: 450px) {
-	.FourIconWrapper .MenuItem {
-		max-width: 80px;
-		width: 76px;
-	}
-	.FourIconWrapper .csod-sf-wplist-img {
-		width: 40px;
-		padding: 11px 22px 8px 22px;
-	}
+	.FourIconWrapper .MenuItem {		max-width: 80px;		width: 76px;	}
+	.FourIconWrapper .csod-sf-wplist-img {		width: 40px;		padding: 11px 22px 8px 22px;	}
 }
-/*END RESPONSIVE CODE*/

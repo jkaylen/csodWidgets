@@ -18,29 +18,12 @@
 	transition-property: background-color, border-color, color;
 	transition: .3s ease-in-out;
 	text-decoration: none;
-	margin-top: 40px;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-top: 40px;	margin-left: 10px;	margin-right: 10px;
 	font-family: "Montserrat", "sans-serif";
 	font-weight: 700;
 }
-.Floating-CTA:hover {
-	color: #000;
-/*SC*/  border-color: var(--main-secondary-color, #ffffff);
-/*SC*/  background-color: var(--main-secondary-color, #ffffff);
-}
-
-.Floating-CTA.Primary {
-/*PC*/  background-color: var(--main-primary-color, #193059);
-/*PC*/  border-color: var(--main-primary-color, #193059);
-}
-.Floating-CTA.Primary:hover{
-	opacity: .8;
-/*SC*/  color: var(--main-secondary-color, #ffffff);
-}
-.FloatingCTAContainer {
-	text-align: left;
-}
-.Floating-CTA:first-child {
-	margin-left: 10px;
-}
+.Floating-CTA:hover {	color: #000;/*SC*/  border-color: var(--main-secondary-color, #ffffff);/*SC*/  background-color: var(--main-secondary-color, #ffffff);}
+.Floating-CTA.Primary {/*PC*/  background-color: var(--main-primary-color, #193059);/*PC*/  border-color: var(--main-primary-color, #193059);}
+.Floating-CTA.Primary:hover{	opacity: .8;/*SC*/  color: var(--main-secondary-color, #ffffff);}
+.FloatingCTAContainer {	text-align: left;}
+.Floating-CTA:first-child {	margin-left: 10px;}

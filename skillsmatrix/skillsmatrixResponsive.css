@@ -1,30 +1,12 @@
 /*include-file: skillsmatrix/skillsmatrixResponsive.css*/
 /*version: 1.00*/
-	.cso-tbl-std th {
-           font-weight: bold;
-           font-family: "Segoe UI",Arial,sans-serif;
-        }
-        .cso-icon {
-		background-image: url(https://demojk.csod.com/images/icon-status.png) !important;
-	}
-	.cso-tbl-std tr.x:hover {
-		background:none;
-	}
-	.cso-tbl-std th.x {
-		background:none;
-		border:none;
-	}
-	.cs-body.main {
-		padding:0 10px 50px;
-	}
-	.cso-icon.popadd {
-		background-image:url(https://fidelitysandbox.csod.com/images/sprite1.png);
-		background-position:0 -1147px;
-		height:18px;
-		width:18px;
-	}
-	.cso-icon.stat {
-		background-image:url(https://demojk.csod.com/images/icon-status.png);
+.cso-tbl-std th { font-weight: bold; font-family: "Segoe UI",Arial,sans-serif; }
+.cso-icon {	background-image: url(https://demojk.csod.com/images/icon-status.png) !important;	}
+.cso-tbl-std tr.x:hover {	background:none;}
+.cso-tbl-std th.x {	background:none;border:none;}
+.cs-body.main {padding:0 10px 50px;	}
+.cso-icon.popadd {background-image:url(https://fidelitysandbox.csod.com/images/sprite1.png);	background-position:0 -1147px;	height:18px;	width:18px;	}
+.cso-icon.stat { background-image:url(https://demojk.csod.com/images/icon-status.png);
 		height:40px;
 		width:40px;
 	}
@@ -77,7 +59,7 @@
 		clip:rect(1px 1px 1px 1px); /* IE7 */
 		clip:rect(1px, 1px, 1px, 1px);
 	}
-	
+
 .Rtable {
   display: flex;
   flex-wrap: wrap;

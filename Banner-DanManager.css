@@ -1,14 +1,6 @@
 /*include-file: Banner-DanManager.css*/
 /*version: 1.01*/
-/*To make banner 100% wide */
-.widgetDropped:nth-child(1) {
-width:100%;
-margin: auto;
-}
 
-
-
-/*BANNER SECTION START */
 /*Section Divider for banner controls height */
 .MainBannerGradient {
 	/* background: rgba(73,155,234,1); */
@@ -25,13 +17,7 @@ margin: auto;
 	left: 0px;
 	width: 100%;
 }
-
-.MgrBannerWrapper{
-/*max-width:1200px;*/
-height: 420px;
-margin:auto;
-position: relative;
-}
+.MgrBannerWrapper{ /*max-width:1200px;*/height: 420px;margin:auto;position: relative;}
 .MgrMainBanner {
 	width: 100%;
 	height: 100%;
@@ -41,67 +27,15 @@ position: relative;
 	background-image: url('https://scfiles.csod.com/dbenson/Images/ManagerWelcomePageTemplate/Edited-Space-Banner-2.jpg');
 	background-color: #fff;
 }
-}
-.Computer {
-float: right;
-height: 420px;
-margin-right: 5%;
-}
-.BannerContentContainer {
-padding-top: 90px;
-width: 730px;
-position: absolute;
-}
-#ProfileImageWrapper {
-margin-left: 8%;
-margin-top: 30px;
-display: inline-block;
-}
-.ProfileImageContainer {
 
-height: 120px;
-width: 120px;
-background-size: 101%;
-background-repeat: no-repeat;
-background-image:url("https://scfiles.csod.com/dbenson/Images/EmployeeWelcomePageTemplate/User.png");
-overflow: hidden;
-border-radius: 50%;
-text-align: left;
-cursor: pointer;
-}
-.ProfileImageContainer:hover {
--webkit-box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);
--moz-box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);
-box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);
--webkit-transition: .25s ease-in-out;
--moz-transition: .25s ease-in-out;
--ms-transition: .25s ease-in-out;
--o-transition: .25s ease-in-out;
-transition: .25s ease-in-out;
-}
-.Mgrctd-welcome-message {
-	display: inline-block;
-	margin: 0px;
-	margin-left: 42px;
-	padding: 0px;
-	color: #fff;
-}
-.Mgrctd-welcome-message h1{
-font-family: "arial", "sans-serif";
-font-weight: 600;
-font-size: 36pt;
-margin: 0px;
-margin-top: 57px;
-}
-.Mgrctd-welcome-message h2{
-font-family: "arial", "sans-serif";
-font-weight: 500;
-font-size: 22pt;
-margin: 0px;
-margin-top: 8px;
-padding:0px;
-margin-bottom: 38px;
-}
+.Computer {float: right;height: 420px;margin-right: 5%;}
+.BannerContentContainer {padding-top: 90px;width: 730px;position: absolute;}
+#ProfileImageWrapper {margin-left: 8%;margin-top: 30px;display: inline-block;}
+.ProfileImageContainer {height: 120px;width: 120px;background-size: 101%;background-repeat: no-repeat;background-image:url("https://scfiles.csod.com/dbenson/Images/EmployeeWelcomePageTemplate/User.png");overflow: hidden;border-radius: 50%;text-align: left;cursor: pointer; }
+.ProfileImageContainer:hover { -webkit-box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);-moz-box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);box-shadow: 3px 1px 10px 1px rgba(255,255,255,1);-webkit-transition: .25s ease-in-out;-moz-transition: .25s ease-in-out;-ms-transition: .25s ease-in-out;-o-transition: .25s ease-in-out;transition: .25s ease-in-out;}
+.Mgrctd-welcome-message {	display: inline-block;	margin: 0px;	margin-left: 42px;	padding: 0px;	color: #fff;}
+.Mgrctd-welcome-message h1{font-family: "arial", "sans-serif";font-weight: 600;font-size: 36pt;margin: 0px;margin-top: 57px;}
+.Mgrctd-welcome-message h2{font-family: "arial", "sans-serif";font-weight: 500;font-size: 22pt;margin: 0px;margin-top: 8px;padding:0px;margin-bottom: 38px;}
 #MgrMainBannerCTA {
 	width: 175px;
 	height: 43px;
@@ -120,10 +54,7 @@ margin-bottom: 38px;
 	color: #fff;
 	border: 3px solid #fff;
 }
-#MgrMainBannerCTA:hover {
-cursor: pointer;
-}
-/*BANNER SECTION END */
+#MgrMainBannerCTA:hover {cursor: pointer;}
 
 .csod-sf-fw {
 background-color: #FFFFFF;
@@ -133,87 +64,23 @@ overflow-x: hidden;
 font-family: "roboto", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
 }
 
-/* END-DYNAMIC WIDGETS SECTION */
-/*START RESPONSIVE CODE*/
 @media screen and (max-width: 1262px) {
-
-.MainBanner {
-background-size: cover;
-background-position: 100%;
-}
-#MgrMainBannerCTA {
-width: 97px;
-height: 24px;
-display: block;
-position: relative;
-text-align: center;
-line-height: 30px;
-margin: auto;
-margin-top: 19px;
-font-size: 12px;
-line-height: 24px;
-}
-.BannerContentContainer {
-
-width: 100%;
-padding-top: 60px;
-
-}
-/*Make profile image container full width*/
-#ProfileImageWrapper {
-margin-top: 30px;
-margin-left: auto;
-margin-right: auto;
-display: inline-block;
-width: 100%;
-}
-/*Align profile image to center and make smaller*/
-.ProfileImageContainer {
-height: 80px;
-width: 80px;
-background-size: 101%;
-background-repeat: no-repeat;
-overflow: hidden;
-border-radius: 50%;
-text-align: center;
-cursor: pointer;
-margin: auto;
-}
-/*Remove Computer Image*/
-.Computer {
-display: none;
-}
-
-/*Make header container full width and reset left margin, align center*/
-.Mgrctd-welcome-message {
-margin-left: 0px;
-padding: 0px;
-text-align: center;
-width: 100%;
-display:block;
-position: relative;
-}
-.Mgrctd-welcome-message h1 {
-font-size: 24pt;
-margin-top: 8px;
-}
-.Mgrctd-welcome-message h2{
-font-size: 14pt;
-}
-
-a.link {
-font-size: 1em;
-}
-
+	.MainBanner {background-size: cover;background-position: 100%;}
+  #MgrMainBannerCTA {width: 97px;height: 24px;display: block;position: relative;text-align: center;line-height: 30px;margin: auto;margin-top: 19px;font-size: 12px;line-height: 24px;}
+  .BannerContentContainer {width: 100%;padding-top: 60px;}
+  /*Make profile image container full width*/
+  #ProfileImageWrapper {margin-top: 30px;margin-left: auto;margin-right: auto;display: inline-block;width: 100%;}
+  /*Align profile image to center and make smaller*/
+  .ProfileImageContainer {height: 80px;width: 80px;background-size: 101%;background-repeat: no-repeat;overflow: hidden;border-radius: 50%;text-align: center;cursor: pointer;margin: auto;}
+  /*Remove Computer Image*/
+  .Computer {display: none;}
+  /*Make header container full width and reset left margin, align center*/
+  .Mgrctd-welcome-message {margin-left: 0px;padding: 0px;text-align: center;width: 100%;display:block; position: relative; }
+  .Mgrctd-welcome-message h1 {font-size: 24pt;margin-top: 8px;}
+  .Mgrctd-welcome-message h2{font-size: 14pt; }
+  a.link {font-size: 1em;}
 }
 @media screen and (max-width: 450px) {
-.MenuItem {
-max-width: 80px;
-width: 76px;
+  .MenuItem {max-width: 80px;width: 76px;}
+  .csod-sf-wplist-img {width: 40px;padding: 11px 22px 8px 22px;}
 }
-.csod-sf-wplist-img {
-width: 40px;
-padding: 11px 22px 8px 22px;
-}
-}
-/*END RESPONSIVE CODE*/
