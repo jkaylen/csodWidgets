@@ -4,6 +4,9 @@ var intRecordCount = 20;
 strUserNumber = '';
 strToken = '';
 
+function getLXPWidget(service,div) {
+  getLEPWidget(service,div);
+}
 function getLEPWidget(service,div) {
 //getLEPWidgets(string service, string div)
 // J. Kaylen 3/13/2018

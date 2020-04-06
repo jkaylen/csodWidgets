@@ -1,18 +1,15 @@
 //include-file: Banner-RotatingDogfood.js
 //version: 1.00
-   var slideIndex = 1;
-    showSlides(slideIndex);
-    carousel();
-
-    function plusSlides(n) {
+var slideIndex = 1;
+showSlides(slideIndex);
+carousel();
+function plusSlides(n) {
         showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
+}
+function currentSlide(n) {
         showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
+}
+function showSlides(n) {
         var i;
         var slides = document.getElementsByClassName("mySlides");
         if (n > slides.length) {slideIndex = 1}
@@ -21,9 +18,8 @@
             slides[i].style.display = "none";
         }
         slides[slideIndex-1].style.display = "block";
-    }
-
-    function carousel() {
+}
+function carousel() {
         var i;
         var x = document.getElementsByClassName("mySlides");
         for (i = 0; i < x.length; i++) {
@@ -33,4 +29,4 @@
         if (slideIndex > x.length) {slideIndex = 1}
         x[slideIndex-1].style.display = "block";
         setTimeout(carousel, 10000); // Change image every 10 seconds
-    }
+}
