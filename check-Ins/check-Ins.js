@@ -1,7 +1,7 @@
 //include-file: check-Ins/check-Ins.js
-//version: 1.03
+//version: 1.04
 if (typeof intCheckInsLimit == 'undefined') {	var intCheckInsLimit = 5; }
-strUserNumber = '';strToken = '';strCultureName = '';strGetStarted = '';strCloud = '';strCorp = '';objFrequency = {};strConversationsJSURL = '';
+strUpcoming = ''; strRecent = ''; strUserNumber = '';strToken = '';strCultureName = '';strGetStarted = '';strCloud = '';strCorp = '';objFrequency = {};strConversationsJSURL = '';
 var div = '';
 function getConversationsWidget(mydiv) {  getCheckInsWidget(mydiv); }
 function getCheckInsWidget(mydiv) {
@@ -38,6 +38,9 @@ function getCheckInsDefaults() {
 		objFrequency['Quarterly'] = objResponse.data["Perf.Check-Ins.conversationFequencyQuarterly"];
 		objFrequency['AsNeeded'] = objResponse.data["Perf.Check-Ins.conversationFequencyAsNeeded"];
 		console.log(objFrequency);
+
+		strUpcoming = objResponse.data["Perf.Check-Ins.LandingPage.upcomingConversations.upcomingConversationsHeader"];
+		strRecent = objResponse.data["Perf.Check-Ins.LandingPage.recentConversationsHeader"];
 		getCheckInsItems();
 	}
 	catch(err) {
@@ -126,86 +129,62 @@ function getCheckInsItems(strPageURL) {
 }
 
 function buildConversationsList(strRawData) {
-	 var monthNames = ["Jan", "Feb", "Mar", "April", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
    objConversations = JSON.parse(strRawData);
    elmParentDiv = document.getElementById(div);
    elmParentDiv.innerHTML = '';
+	 document.getElementById(div).previousElementSibling.innerHTML = '';
+	 if(strRecent == undefined) { strRecent = 'RECENT CHECK-INS' }
+	 if(strUpcoming == undefined) { strUpcoming = 'UPCOMING CHECK-INS' }
+	 elmParentDiv.innerHTML = '<div class="sc-kAdXeD irJdGX"><ul role="tablist" class="sc-cCVOAp fyCuaq"><li id="liRecent" role="presentation" class="liInActive"><a id="linkRecent" onclick="checkinChange(\'recent\')" role="tab" tabindex="0" class="igTcYW"><span class="txtInActive recent-conversations__header" id="txtRecent">' + strRecent + '</span></a></li><li role="presentation" id="liUpcoming" class="liActive"><a id="linkUpcoming" onclick="checkinChange(\'upcoming\')" role="tab" tabindex="-1" class="igTcYW"><span class="txtActive recent-conversations__header" id="txtUpcoming">' + strUpcoming + '</span></a></li></ul></div><div id="tabRecent" style="display: none;"></div><div id="tabUpcoming"></div>';
    if(objConversations.length > 0) {
-  	 if(objConversations.length > 20) { strLength = 20; } else {strLength=objConversations.length; }
-  	 objConversations.sort(function(a, b) {
+  	if(objConversations.length > 20) { strLength = 20; } else {strLength=objConversations.length; }
+		strDisplayedRecent = 0;
+		strDisplayedUpcoming = 0;
+		//Recent first
+  	objConversations.sort(function(a, b) {
 		  a = new Date(a.lastMeetingDate);
 		  b = new Date(b.lastMeetingDate);
 		  return a-b;
-	    });
-  	 strDisplayed = 0;
-	    for (var i = 0; i < strLength; i++) {
-	 	    if(objConversations[i].isArchived == true) {continue;	}
-	 	    for (var j = 0; j < objConversations[i].participants.length; j++) {
-	 		    if(objConversations[i].participants[j].id != strUserNumber) { intParticipant = j; }
-	 	    }
-	 	    var tmpParentDiv = document.createElement("div");
-	 	    tmpParentDiv.setAttribute('data-tag','recent-conversation-row-id-' + objConversations[i].id);
-	 	    tmpParentDiv.setAttribute('data-id',objConversations[i].id);
-	 	    tmpParentDiv.onclick = function() { window.location = '/ui/perf-check-ins/Check-Ins/view/' + this.getAttribute('data-id') };
-	 	    tmpDiv = document.createElement("div");
-	 	    tmpDiv.className = 'divider';
-	 	    tmpParentDiv.appendChild(tmpDiv);
-	 	    tmpDiv = document.createElement("div");
-	 	    tmpDiv.className = 'recent-conversations-row';
-	 	    tmpDivAvatar = document.createElement("div");
-	 	    tmpDivAvatar.className = 'recent-conversations-row__avatar';
-	 	    if(objConversations[i].participants[intParticipant].pictureUrl != '') {
-	 		    tmpDivAvatarSub = document.createElement("div");
-	 		    tmpDivAvatarSub.className = 'css-c8f728';
-	 		    tmpDivAvatarSub.style.backgroundImage = "url('/clientimg/" + strCorp + "/users/photos/100/" + objConversations[i].participants[intParticipant].pictureUrl +"')";
-	 	    } else {
-	 		    tmpDivAvatarSub = document.createElement("div");
-	 		    tmpDivAvatarSub.className = 'css-c8f728';
-	 		    tmpDivAvatarSub.innerHTML = objConversations[i].participants[intParticipant].firstName.substring(0,1) + objConversations[i].participants[intParticipant].lastName.substring(0,1);
-	 	    }
-	 	    tmpDivAvatar.appendChild(tmpDivAvatarSub);
-	 	    tmpDiv.appendChild(tmpDivAvatar);
-	 	    tmpDivMiddle = document.createElement("div");
-	 	    tmpDivMiddle.className = 'recent-conversations-row__middle-container';
-	 	    tmpDivMiddleSub = document.createElement("div");
-	 	    tmpDivMiddleSub.className = 'recent-conversations-row__name';
-	 	    tmpDivMiddleSub.innerHTML = objConversations[i].participants[intParticipant].firstName + ' ' + objConversations[i].participants[intParticipant].lastName;
-	 	    tmpDivMiddle.appendChild(tmpDivMiddleSub);
-	 	    tmpDivMiddleSub = document.createElement("div");
-	 	    tmpDivMiddleSub.className = 'recent-conversations-row__conversation-name';
-	 	    tmpDivMiddleSub.innerHTML = objConversations[i].title;
-	 	    tmpDivMiddle.appendChild(tmpDivMiddleSub);
-	 	    tmpDivMiddleSub = document.createElement("div");
-	 	    tmpDivMiddleSub.className = 'recent-conversations-row__conversation-frequency';
-	 	    tmpDivMiddleSubSub = document.createElement("div");
-	 	    tmpDivMiddleSubSub.className = "frequency-chip frequency-chip--grey";
-	 	    tmpDivMiddleSubSub.innerHTML = objFrequency[objConversations[i].frequency];
-	 	    tmpDivMiddleSub.appendChild(tmpDivMiddleSubSub);
-	 	    tmpDivMiddle.appendChild(tmpDivMiddleSub);
-	 	    tmpDiv.appendChild(tmpDivMiddle);
-	 	    tmpDivDate = document.createElement("div");
-	 	    tmpDivDate.className = "recent-conversations-row__conversation-date";
-	 	    var strDateOrig = objConversations[i].lastMeetingDate;
-	 	    var dateLastMeeting = new Date(strDateOrig)
-	 	    tmpDivDate.innerHTML = monthNames[dateLastMeeting.getMonth()] + ' ' + pad(dateLastMeeting.getDate());
-	 	    tmpDiv.appendChild(tmpDivDate);
-	 	    tmpParentDiv.appendChild(tmpDiv);
-	 	    elmParentDiv.appendChild(tmpParentDiv);
-	 	    strDisplayed++;
-	 	    if(strDisplayed >= intCheckInsLimit) { break;	}
-	    }
-	    if(strDisplayed == 0) {
-  	 	  var tmpDiv = document.createElement("div");
-  		  tmpDiv.className = "landing-page__button-container";
-	  	  var tmpButton = document.createElement("button");
-	  	  tmpButton.className = "css-1x5m317";
-	  	  tmpButton.type = "button";
-	  	  tmpButton.innerHTML = strGetStarted;
-	  	  tmpButton.onclick = function() { window.location = '/ui/perf-check-ins/Check-Ins/create/select-participant' };
-	  	  tmpDiv.appendChild(tmpButton);
-	  	  elmParentDiv.appendChild(tmpDiv);
-	    }
-   } else {
+	  });
+	  for (var i = 0; i < strLength; i++) {
+	 	  if(objConversations[i].isArchived == true) {continue;	}
+			if(objConversations[i].lastMeetingDate == '') { continue; }
+			var myDate = new Date(objConversations[i].lastMeetingDate);
+			if(myDate > new Date) { continue; }
+	 	  var tmpParentDiv = buildConvoRow(objConversations[i],false);
+	 	  document.getElementById('tabRecent').appendChild(tmpParentDiv);
+	 	  strDisplayedRecent++;
+	 	  if(strDisplayedRecent >= intCheckInsLimit) { break;	}
+	  }
+
+		objConversations.sort(function(a, b) {
+		  a = new Date(a.nextMeetingDate);
+		  b = new Date(b.nextMeetingDate);
+		  return a-b;
+	  });
+	  for (var i = 0; i < strLength; i++) {
+	 	  if(objConversations[i].isArchived == true) {continue;	}
+			if(objConversations[i].nextMeetingDate == '') { continue; }
+			var myDate = new Date(objConversations[i].nextMeetingDate);
+			if(myDate < new Date) { continue; }
+	 	  var tmpParentDiv = buildConvoRow(objConversations[i],true);
+	 	  document.getElementById('tabUpcoming').appendChild(tmpParentDiv);
+	 	  strDisplayedUpcoming++;
+	 	  if(strDisplayedUpcoming >= intCheckInsLimit) { break;	}
+	  }
+
+	  if(strDisplayedUpcoming == 0) {
+  	  var tmpDiv = document.createElement("div");
+  	  tmpDiv.className = "landing-page__button-container";
+	    var tmpButton = document.createElement("button");
+	    tmpButton.className = "css-1x5m317";
+	    tmpButton.type = "button";
+	    tmpButton.innerHTML = strGetStarted;
+	    tmpButton.onclick = function() { window.location = '/ui/perf-check-ins/Check-Ins/create/select-participant' };
+	    tmpDiv.appendChild(tmpButton);
+	    document.getElementById('tabUpcoming').appendChild(tmpDiv);
+	  }
+  } else {
      var tmpDiv = document.createElement("div");
   	 tmpDiv.className = "landing-page__button-container";
   	 var tmpButton = document.createElement("button");
@@ -216,5 +195,80 @@ function buildConversationsList(strRawData) {
   	 tmpDiv.appendChild(tmpButton);
   	 elmParentDiv.appendChild(tmpDiv);
    }
+}
+function buildConvoRow(objConvo,bolUpcoming) {
+	var monthNames = ["Jan", "Feb", "Mar", "April", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+	for (var j = 0; j < objConvo.participants.length; j++) {
+		if(objConvo.participants[j].id != strUserNumber) { intParticipant = j; }
+	}
+	var tmpParentDiv = document.createElement("div");
+	tmpParentDiv.setAttribute('data-tag','recent-conversation-row-id-' + objConvo.id);
+	tmpParentDiv.setAttribute('data-id',objConvo.id);
+	tmpParentDiv.onclick = function() { window.location = '/ui/perf-check-ins/Check-Ins/view/' + this.getAttribute('data-id') };
+	tmpDiv = document.createElement("div");
+	tmpDiv.className = 'divider';
+	tmpParentDiv.appendChild(tmpDiv);
+	tmpDiv = document.createElement("div");
+	tmpDiv.className = 'recent-conversations-row';
+	tmpDivAvatar = document.createElement("div");
+	tmpDivAvatar.className = 'recent-conversations-row__avatar';
+	if(objConvo.participants[intParticipant].pictureUrl != '') {
+		tmpDivAvatarSub = document.createElement("div");
+		tmpDivAvatarSub.className = 'css-c8f728';
+		tmpDivAvatarSub.style.backgroundImage = "url('/clientimg/" + strCorp + "/users/photos/100/" + objConvo.participants[intParticipant].pictureUrl +"')";
+	} else {
+		tmpDivAvatarSub = document.createElement("div");
+		tmpDivAvatarSub.className = 'css-c8f728';
+		tmpDivAvatarSub.innerHTML = objConvo.participants[intParticipant].firstName.substring(0,1) + objConvo.participants[intParticipant].lastName.substring(0,1);
+	}
+	tmpDivAvatar.appendChild(tmpDivAvatarSub);
+	tmpDiv.appendChild(tmpDivAvatar);
+	tmpDivMiddle = document.createElement("div");
+	tmpDivMiddle.className = 'recent-conversations-row__middle-container';
+	tmpDivMiddleSub = document.createElement("div");
+	tmpDivMiddleSub.className = 'recent-conversations-row__name';
+	tmpDivMiddleSub.innerHTML = objConvo.participants[intParticipant].firstName + ' ' + objConvo.participants[intParticipant].lastName;
+	tmpDivMiddle.appendChild(tmpDivMiddleSub);
+	tmpDivMiddleSub = document.createElement("div");
+	tmpDivMiddleSub.className = 'recent-conversations-row__conversation-name';
+	tmpDivMiddleSub.innerHTML = objConvo.title;
+	tmpDivMiddle.appendChild(tmpDivMiddleSub);
+	tmpDivMiddleSub = document.createElement("div");
+	tmpDivMiddleSub.className = 'recent-conversations-row__conversation-frequency';
+	tmpDivMiddleSubSub = document.createElement("div");
+	tmpDivMiddleSubSub.className = "frequency-chip frequency-chip--grey";
+	tmpDivMiddleSubSub.innerHTML = objFrequency[objConvo.frequency];
+	tmpDivMiddleSub.appendChild(tmpDivMiddleSubSub);
+	tmpDivMiddle.appendChild(tmpDivMiddleSub);
+	tmpDiv.appendChild(tmpDivMiddle);
+	tmpDivDate = document.createElement("div");
+	tmpDivDate.className = "recent-conversations-row__conversation-date";
+	var strDate = '';
+	if(bolUpcoming) {
+		var dateLastMeeting = new Date(objConvo.nextMeetingDate);
+	} else {
+		var dateLastMeeting = new Date(objConvo.lastMeetingDate);
+	}
+	tmpDivDate.innerHTML = monthNames[dateLastMeeting.getMonth()] + ' ' + pad(dateLastMeeting.getDate());
+	tmpDiv.appendChild(tmpDivDate);
+	tmpParentDiv.appendChild(tmpDiv);
+	return tmpParentDiv;
+}
+function checkinChange(change) {
+	if(change == 'recent') {
+		document.getElementById('liRecent').className = 'liActive';
+		document.getElementById('txtRecent').className = "txtActive recent-conversations__header";
+		document.getElementById('liUpcoming').className = 'liInActive';
+		document.getElementById('txtUpcoming').className = "txtInActive recent-conversations__header";
+		document.getElementById('tabUpcoming').style.display = 'none';
+		document.getElementById('tabRecent').style.display = 'block';
+	} else {
+		document.getElementById('liUpcoming').className = 'liActive';
+		document.getElementById('txtUpcoming').className = "txtActive recent-conversations__header";
+		document.getElementById('liRecent').className = 'liInActive';
+		document.getElementById('txtRecent').className = "txtInActive recent-conversations__header";
+		document.getElementById('tabRecent').style.display = 'none';
+		document.getElementById('tabUpcoming').style.display = 'block';
+	}
 }
 function pad(n) {  return n<10 ? '0'+n : n;}
