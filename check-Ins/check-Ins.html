@@ -1,0 +1,17 @@
+<!-- WIDGET_ID: 21; -->
+<script data-include-file="check-Ins/check-Ins.js" src="https://www.example.com/widgets/check-Ins/check-Ins.js"></script>
+<link data-include-file="check-Ins/check-InsV2.css" href="https://www.example.com/widgets/check-Ins/check-InsV2.css" rel="stylesheet" type="text/css">
+<style>
+.recent-conversations__header, .recent-conversations {
+/*PC*/ color: var(--main-primary-color, #193059) !important;
+}
+</style>
+
+<div class="recent-conversations">
+ <div class="recent-conversations__header" data-tag="recent-conversation-header">Check-Ins</div>
+ <div id="convoList"></div>
+</div>
+<script>
+intCheckInsLimit = 5;
+getCheckInsWidget('convoList');
+</script>
