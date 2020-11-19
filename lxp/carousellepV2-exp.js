@@ -4,10 +4,10 @@ var intRecordCount = 20;
 strUserNumber = '';
 strToken = '';
 
-function getLXPWidget(service,div) {
-  getLEPWidget(service,div);
+function getLXPWidget(service,div,type='') {
+  getLEPWidget(service,div,type);
 }
-function getLEPWidget(service,div) {
+function getLEPWidget(service,div,type='') {
 //getLEPWidgets(string service, string div)
 // J. Kaylen 3/13/2018
 // Service entries that are valid:
@@ -16,12 +16,12 @@ function getLEPWidget(service,div) {
 //   Continue, Saved
 // Div sets the div element id that should be populated with the carousel
   if(strUserNumber == '') {
-    getLXPToken(service, div);
+    getLXPToken(service, div,type);
   } else {
-    getLXPLOs(service, div);
+    getLXPLOs(service, div,type);
   }
 }
-function getLXPToken(service, div) {
+function getLXPToken(service, div,type) {
   strLXPURL = "/ui/lms-learner-home/home";	//Need to call LXP first to get Token and User Numeric ID. Takes about 2s
   var xhrLXP = new XMLHttpRequest();
   xhrLXP.onreadystatechange = function() {
@@ -31,14 +31,14 @@ function getLXPToken(service, div) {
       strToken = strLXP.substring(strLXP.indexOf('"token"')+9,strLXP.indexOf('",',strLXP.indexOf('"token"')));
       console.log('UserNumber ' + strUserNumber);
       console.log('Token ' + strToken);
-      getLXPLOs(service, div);		//Now we are ready to call the actual service to get the LO's
+      getLXPLOs(service, div, type);		//Now we are ready to call the actual service to get the LO's
     }
   };
   xhrLXP.open("POST", strLXPURL, true);
   xhrLXP.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
   xhrLXP.send();
 }
-function getLXPLOs(service, div) {
+function getLXPLOs(service, div, type) {
   //Generate URL based off of Service, record limit, and user numeric id
   if((service == 'Featured') || (service == 'Suggested') || (service == 'Required')) {
     strPageURL = "/services/api/lms/user/" + strUserNumber + "/adminSelectedtraining?type=" + service + "&sortCriteria=MostRecentModified&pageSize=" + intRecordCount + "&pageNum=1";
@@ -52,7 +52,7 @@ function getLXPLOs(service, div) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      buildCarousel(div, xhr.responseText, service);
+      buildCarousel(div, xhr.responseText, service,type);
     }
   };
   xhr.open("GET", strPageURL, true);
@@ -60,10 +60,55 @@ function getLXPLOs(service, div) {
   xhr.setRequestHeader('Authorization', 'Bearer ' + strToken);
   xhr.send();
 }
-function buildCarousel(div, strRawData, service) {
+
+function buildCarousel(div, strRawData, service,type) {
   objTraining = JSON.parse(strRawData);
   console.log(objTraining);
-  strHTML = ''
+  strHTML = '';
+  bolChallenge = false;
+  if(objTraining.data) {
+    for(var i=0;i<objTraining.data.length; i++) {
+      if(objTraining.data[i].title.indexOf('Challeng') > -1) {
+        bolChallenge = true;
+      }
+    }
+  }
+  if(document.getElementById('divChallengesTotal') && document.getElementById('divChallengesCurrent') && document.getElementById('challengeProgressBar') && document.getElementById('divChallengesTotal') != 0) {
+    document.getElementById('challengeProgressBar').innerHTML = '';
+    intTotal = parseInt(document.getElementById('divChallengesTotal').innerHTML);
+    intCurrent = parseInt(document.getElementById('divChallengesCurrent').innerHTML);
+    var intWidth = 100/intTotal;
+    for(var i=1; i<=intTotal;i++) {
+      var elmLI = document.createElement('li');
+      if(i<=intCurrent) {
+        elmLI.className = 'active';
+        elmLI.title = 'Completed Challenge';
+      } else if(i == (intCurrent + 1)) {
+        elmLI.className = 'current';
+        elmLI.title = 'On Deck/Just Completed Challenge';
+      } else {
+        elmLI.className = '';
+      }
+      elmLI.style.width = intWidth + '%';
+      document.getElementById('challengeProgressBar').appendChild(elmLI);
+    }
+    document.querySelector('.containerProgressBar').style.display = 'block';
+  }
+  if(bolChallenge == false) {
+    if(type == 'newuser') {
+      strHTML = '<div style="width: 100%; display:block;"><div style="font-family: \'Roboto\'; font-size: 1.3rem; width: 80%; text-align: center; padding: 0; margin: auto;">We are cooking up your next Challenge, it should be ready in less than 15 minutes!<br> Grab a cup of coffee or click the button to see some Bonus Challenges. We will email you when the next Challenge is ready!<br><br><center><a id="SolidBackground-CTA" href="/ui/lms-learner-search/search?pageNumber=1&query=bonus"">Bonus Challenges</a></center></div></div>';
+    } else {
+      if(document.getElementById('divChallengesTotal') && document.getElementById('divChallengesCurrent') && document.getElementById('divChallengesCurrent').innerHTML == document.getElementById('divChallengesTotal').innerHTML) {
+        strHTML = '<div style="width: 100%; display:block;"><div style="font-family: \'Roboto\'; font-size: 1.3rem; width: 80%; text-align: center; padding: 0; margin: auto;">Congratulations! You have completed all available Challenges for this Experience. Please make sure to give us feedback and continue to explore the system.</div></div>';
+      } else {
+        strHTML = '<div style="width: 100%; display:block;"><div style="font-family: \'Roboto\'; font-size: 1.3rem; width: 80%; text-align: center; padding: 0; margin: auto;">We are cooking up your next Challenge, it should be ready in less than 15 minutes!<br> Grab a cup of coffee or check out the Bonus Challenges below. We will email you when the next Challenge is ready!</div></div>';
+      }
+    }
+    document.getElementById(div).innerHTML = strHTML;
+    document.getElementById(div).style.minHeight = '0px';
+    document.getElementById(div).style.marginBottom = '40px';
+    return 1;
+  }
   strHTML = strHTML + '<div class="p-carouselmobile" style="width: 100%;">\n';
   strHTML = strHTML + '<div class="p-carouselmobile-container" style="height: auto;">\n';
   strHTML = strHTML + '<ul class="carousel">\n';
@@ -73,6 +118,9 @@ function buildCarousel(div, strRawData, service) {
           strThumbnail = "/LMS" + objTraining.data[i].thumbnailImage.substring(2);
     } else {
           strThumbnail = objTraining.data[i].thumbnailImage;
+    }
+    if(objTraining.data[i].title.indexOf('Challeng') == -1) {
+      continue;
     }
   	strHTML = strHTML + '  <li class="p-carouselitem" style="width: 204px;">\n';
   	strHTML = strHTML + '  <div class="p-panel p-p-r-sm">\n';
@@ -109,7 +157,7 @@ function buildCarousel(div, strRawData, service) {
   	strHTML = strHTML + '                    </div>\n';
   	strHTML = strHTML + '                    <div class="p-gridcol col-fill-device-none">\n';
   	if(objTraining.data[i].isInUserTranscript == true) {
-  		strHTML = strHTML +'<a class="p-link p-f-sz-d p-link-def p-t-full-hv-primary50 p-f-w-6 p-t-wr-el p-bl-ib" id="PrimaryAction_' + i + '" onclick=\"processAction(this);\" title="Launch">Launch</a>';
+  		strHTML = strHTML +'<a class="p-link p-f-sz-d p-link-def p-t-full-hv-primary50 p-f-w-6 p-t-wr-el p-bl-ib" id="PrimaryAction_' + i + '" onclick=\"processAction(this);\" title="Launch"> </a>';
   	} else if(("averageRating" in objTraining.data[i]) && (objTraining.data[i].averageRating != 0.0)) {
   		strHTML = strHTML + '		      <div title="' + objTraining.data[i].ratingString + '" class="p-icongauge p-f-sz-lg p-t-warning50">\n';
   		strHTML = strHTML + '			<div aria-hidden="true">\n';
@@ -147,6 +195,7 @@ function buildCarousel(div, strRawData, service) {
   document.getElementById(div).innerHTML = strHTML;
   ps = new PerfectScrollbar('#' + div + ' .p-carouselmobile-container',{suppressScrollY: true});
 }
+
 function getLOActionItems(LOID, intCounterID, bolTranscript) {
 	strPageURL = "/services/api/LMS/TrainingActionForUser/Actions/?isInUserTranscript=" + bolTranscript + "&trainingIds=" + LOID;
 	var xhr = new XMLHttpRequest();
@@ -161,6 +210,7 @@ function getLOActionItems(LOID, intCounterID, bolTranscript) {
 	xhr.setRequestHeader('Authorization', 'Bearer ' + strToken);
 	xhr.send();
 }
+
 function buildMenu(strData, intCounterID) {
 	objMenuActions = JSON.parse(strData);
 	console.log(objMenuActions);

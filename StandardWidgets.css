@@ -1,5 +1,6 @@
 /*include-file: StandardWidgets.css*/
-/*version: 1.01*/
+/*version: 1.02*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap');
 table .CsList th, table .CsList_th, .columnHeaderLinkText {	background: #fff;	color:#6b6c6e;	font-family: "Open Sans", "Gill Sans", "Gill Sans MT", "Calibri", "sans-serif";	font-size: 14px;	font-weight: 100;}
 .Panel_contentMiddle th { background-color: transparent; }
 a {	font-weight: 100; }

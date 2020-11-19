@@ -101,3 +101,25 @@ ul.carousel { text-align: left; display: inline-block; margin-block-start: 0; ma
 .prerender-placeholder{	-webkit-animation-duration:1.5s;	animation-duration:1.5s;	-webkit-animation-fill-mode:forwards;	animation-fill-mode:forwards;	-webkit-animation-iteration-count:infinite;	animation-iteration-count:infinite;	-webkit-animation-name:placeHolderShimmer;	animation-name:placeHolderShimmer;	-webkit-animation-timing-function:linear;	animation-timing-function:linear;	background:#f6f7f8;	background:#eee;	background:-webkit-gradient(linear,left top,right top,colorstop(8%,#eee),color-stop(18%,#ddd),color-stop(33%,#eee));	background:linear-gradient(90deg,#eee 8%,#ddd 18%,#eee 33%);	background-size:800px 104px;	position:relative;	border-radius:3px;}.prerender-placeholder.thumbnail{	width:90%;	margin-left:5%;	margin-top:5%;}.prerender-placeholder.lotitle{	height:25px;	width:90%;	margin-left:0;	margin-top:4px;}.prerender-placeholder.loduration{	height:18px;	width:40%;	margin-top:-3px;}
 .prerender-placeholder.lotype{	height:18px;	width:50%;	margin-left:0;	margin-top:-3px }
 .prerender-placeholder.lostars{	height:18px;	width:50%;	margin-left:50px;	margin-top:-3px}
+#SolidBackground-CTA {
+    background-color: var(--main-primary-color, #193059);
+    border-color: var(--main-primary-color, #193059);
+    width: 152px;
+    padding: 12.5px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Roboto", "open-sans", "sans-serif";
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 10px;
+		color: white;
+}
+#SolidBackground-CTA:hover {
+    background-color: var(--main-secondary-color, #fff);
+    box-shadow: 0 0 10px var(--main-secondary-color, #fff);
+    color: #193059;
+}

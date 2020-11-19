@@ -1,5 +1,5 @@
 /*include-file: Banner-Generic.css*/
-/*version: 1.01*/
+/*version: 1.02*/
 .GenericBannerWrapper{
 	height: 0px;
 	padding-top: calc(350/1200 * 100%);
@@ -153,4 +153,74 @@
 	.Genericctd-welcome-message {		padding-top: 15vw;	}
 	.showProfilePicture .Genericctd-welcome-message {		padding-top: 2vw;	}
 	.showProfilePicture .GenericBannerContentContainer {		padding-top: 10vw;	}
+}
+
+.containerProgressBar{
+	max-width: 300px;
+	width:100%;
+	top: 10px;
+	right: 10px;
+	position: absolute;
+	z-index: 10;
+	display: none;
+}
+
+.progressbar li{
+	float: left;
+	width: 20%;
+	position: relative;
+	text-align: center;
+}
+.progressbar{
+	counter-reset: step;
+	list-style-type: none;
+}
+.progressbar li:before{
+	content:counter(step);
+	counter-increment: step;
+	width: 30px;
+	height: 30px;
+	border: 2px solid #bebebe;
+	display: block;
+	margin: 0 auto 10px auto;
+	border-radius: 50%;
+	line-height: 27px;
+	background: white;
+	color: #bebebe;
+	text-align: center;
+	font-weight: bold;
+}
+.progressbar li:after{
+	content: '';
+	position: absolute;
+	width:100%;
+	height: 3px;
+	background: #979797;
+	top: 15px;
+	left: -50%;
+	z-index: -1;
+}
+.progressbar li:first-child:after{
+	content: none;
+}
+.progressbar li.active + li:after{
+	background: #6FD6AF;
+}
+.progressbar li.active:before {
+	border-color: #6FD6AF;
+	background: #6FD6AF;
+	color: white
+}
+.progressbar li.current:before {
+	border-color: #FDB14A;
+	background: #FDB14A;
+	color: black
+}
+@media screen and (max-width: 950px) {
+	.containerProgressBar {
+		top: 180px !important;
+		left: 50%;
+		right: unset;
+		margin-left: -170px;
+	}
 }

@@ -15,8 +15,8 @@ NOTE: Client portal must have JavaScript enabled on the Welcome Page
 ## Directions
 1. Place either an HTML Widget (best for full/constrained) or a Formatted Textbox Widget (best if 2 or 3 widgets in the row)
 
-2. Use the drop down in settings below to select the type:
+2. Select one of the options below and enter into the getLXPWIdget('????','myLO2') call:
 - Machine Learning: TopPicks, Position, Subjects, Popularity, Playlists
 - Admin Selected: Featured, Suggested, Required
 - Other: Continue, Saved
-3. If using a Formated Text box, you may wish to remove the Title in the settings below, else update the title to reflect which carousal type you are using
+3. If using a Formatted Text box, you may wish to remove the Title in the settings below, else update the title to reflect which carousal type you are using
