@@ -11,7 +11,7 @@ NOTE: These files are provided **without warranty**. I will make my best effort 
 
 ## JavaScript Includes
 The majority of Includes are CSS files and unlikely to be impacted by any Updates or Releases. There are several JavaScript Includes, which have been stable, but could break with an Update or Release. Note that a client will need JavaScript enabled on their portal for these widgets to work correctly.
-- lxp/carousellepV3.js: LxP Widget
+- lxp/carousellepV2.js: LxP Widget
 - skillsmatrix/skillsmatrixResponsive.js: Skills Matrix Widget
 - checks-Ins/Check-Ins.js: Check-Ins/Conversations Widget
 - searchBar.js: LxP Searchbar Widget
